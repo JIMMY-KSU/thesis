@@ -1,0 +1,17 @@
+<variables>
+  <variable path="NumericalSpecification.SolverType" name="SolverType">
+    <domain>
+      <value>CoupledLinearNS</value>
+      <value>VelocityCorrectionScheme</value>
+    </domain>
+  </variable>              
+
+  <variable path="NumericalSpecification.Projection" name="Projection">
+    <domain>
+      <value>ContinuousGalerkin</value>
+      <value>DiscontinuousGalerkin</value>
+      <value>MixedGalerkin</value>
+    </domain>
+  </variable>           
+</variables>
+

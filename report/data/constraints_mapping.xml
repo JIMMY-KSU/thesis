@@ -1,0 +1,12 @@
+<constraints>
+  <!-- Mapping of solver type with projection type -->
+  <mapping variable="SolverType" varvalue="VelocityCorrectionScheme" targetVariable="Projection">
+    <targetValue>ContinuousGalerkin</targetValue>
+    <targetValue>DiscontinuousGalerkin</targetValue>
+    <targetValue>MixedGalerkin</targetValue>
+  </mapping>
+  <mapping variable="SolverType" varvalue="CoupledLinearNS" targetVariable="Projection">
+    <targetValue>ContinuousGalerkin</targetValue>
+  </mapping> 
+</constraints>            
+

@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{Amazon_2013}
+Amazon Web~Services Inc.
+\newblock Amazon elastic compute cloud (amazon ec2), cloud computing servers.
+\newblock {\em https://aws.amazon.com/ec2}, accessed 1\textsuperscript{st} June
+  2017.
+
+\bibitem{Google2015}
+Google Inc.
+\newblock Google compute engine, iaas services.
+\newblock {\em https://cloud.google.com/compute/}, accessed
+  1\textsuperscript{st} July 2017.
+
+\bibitem{Nektar2015}
+A.~Comerford A. Bolis G. Rocco G. Mengaldo D. De Grazia S. Yakovlev J-E.
+  Lombard D. Ekelschot B. Jordi H. Xu Y. Mohamied C. Eskilsson B. Nelson P. Vos
+  C. Biotto R. M.~Kirby C.~D.~Cantwell, D.~Moxey and S.~J. Sherwin.
+\newblock Nektar++: An open-source spectral/hp element framework.
+\newblock {\em Computer physics communications}, 192:205--219, 2015.
+
+\bibitem{Solo_etal2002}
+D.~Solo, J.~Reagle, and D~Eastlake.
+\newblock (extensible markup language) xml-signature syntax and processing.
+\newblock {\em RFC Editor}, 2002.
+
+\bibitem{Cohen_etal2013}
+J.~Cohen, D.~Moxey, C.~Cantwell, P.~Burovskiy, J.~Darlington, and S.~J.
+  Sherwin.
+\newblock Nekkloud: A software environment for high-order finite element
+  analysis on clusters and clouds.
+\newblock {\em IEEE International Conference on Cluster Computing (CLUSTER)},
+  2013.
+
+\bibitem{Austing_etal2017}
+P.~Austing, C.~Cantwell, J.~Cohen, D~Moxey, and J~Nowell.
+\newblock Tempss: A web service for managing libhpc application parameter
+  templates and profiles.
+\newblock {\em https://github.com/london-escience/tempss}, Accessed July 2017.
+
+\bibitem{Oseen1910}
+C.~W. Oseen.
+\newblock {\"U}ber die stoke'sche formel und {\"u}ber eine verwandte aufgabe in
+  der hydrodynamik.
+\newblock {\em Arkiv f{\"o}r matematik, astronomi och fysik}, 6, 1911.
+
+\end{thebibliography}

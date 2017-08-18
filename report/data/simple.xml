@@ -1,0 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<Force repeatable="true" paramType="choice" optional="true">
+  <Absorption>
+    <Coeff type="xs:string"/>
+    <RefFlow type="xs:string"/>
+    <RefFlowTime type="xs:string"/>
+  </Absorption>
+  <Body>
+    <BodyForce type="xs:string"/>
+  </Body>
+  <Noise>
+    <Whitenoise type="positiveDouble"/>
+    <UpdateFreq type="positiveDouble" optional="true"/>
+    <Nsteps type="positiveDouble" optional="true"/>
+  </Noise>
+</Force>
