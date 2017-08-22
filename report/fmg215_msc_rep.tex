@@ -68,14 +68,14 @@
 \newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
 \hbox{ % Horizontal box
 \hspace*{0.1\textwidth} % Whitespace to the left of the title page
-\rule{1pt}{\textheight} % Vertical line
+\rule{1.5pt}{\textheight} % Vertical line
 \hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
 \parbox[b]{0.85\textwidth}{ % Paragraph box which restricts text to less than the width of the page
 
 {\noindent\huge\bfseries \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{imp_logo}
 \\[0.5\baselineskip] MSc Thesis: HPC on the Cloud}
 \\[2\baselineskip] % Title
-{\Large \textit{Author:}}\\ {Friedrich M. Grabner \\ CID 01220997 \\}\\
+{\Large \textit{Author:}}\\ {Friedrich M. Grabner \\ CID - 01220997 \\}\\
 {\Large \textit{Supervisor:}}{\\Dr C. Cantwell}\\% Tagline or further description
 {\large } % Author name
 
@@ -122,17 +122,18 @@ Department of Aeronautics\\
 MSc Advanced Computational Methods for Aeronautics, Flow Management, and Fluid-Structure Interaction\\
 \vspace{.5cm}
 \textbf{HPC on the Cloud}\\
+\vspace{.5cm}
 Friedrich M. Grabner\\
 \vspace{.5cm}
 \hrule
-\vspace{.5cm}
+\vspace{.75cm}
 {\Large \textit{\textbf{Abstract}}}\\
 \end{center}
 \vspace{.25cm}
 
 
 \noindent
-Nektar++ is a powerful set of libraries which can be used to simulate a number of physical phenomena. Currently users number in the range of low hundreds. A critical obstacle to wide scale adoption, is in part the complexity of using the software. Indeed the learning curve, to both setup a simulation file and specify computational resources correctly, is steep. Limiting ourselves to Nektar++'s incompressible Navier-Stokes solver a new user-interface has been developed. Named TemPSS, the interface is hosted on a Java based web platform. Moreover the entire functionality, of the incompressible flow solver, has been mapped out using XML schema. Functional input files for the Nektar++ incompressible flow solver are then generated through an XSLT transform, which the user can then use to run their simulation. Verification of the TemPSS interface has then been performed, through comparison of outputs of three separate test cases, using input files created both manually and through TemPSS. The testing performed proved that TemPSS robustly generates functioning input files for Nektar++.
+Nektar++ is a powerful set of libraries which can be used to simulate a number of physical phenomena. Currently users number in the range of low hundreds. A critical obstacle to wide scale adoption, is in part the complexity of using the software. Indeed the learning curve, to both setup a simulation file and specify computational resources correctly, is steep. Limiting ourselves to Nektar++'s incompressible Navier-Stokes solver a graphical user-interface has been developed. Named TemPSS, the interface is hosted on a Java based web platform. Moreover the entire parameter space, of the incompressible flow solver, has been mapped out using XML schema. Functioning input files for the Nektar++ incompressible flow solver are then generated through an XSLT transform, which the user can then use to run their simulation. Verification of the TemPSS interface has then been performed, through comparison of outputs of three separate test cases, using input files created both manually and through TemPSS. The testing performed proved that TemPSS robustly generates functioning input files for Nektar++.
 \newpage
 %----------------------------------------------------------------------------------------
 %	NOMENCLATURE & ACKNOWLEDGEMENTS
@@ -176,7 +177,7 @@ Despite the advancements made many people are still reluctant to utilise codes t
  \label{fig:venn_diagram}
 \end{figure}
 
-Nektar++\cite{Nektar2015} is an open-source framework of libraries which can be assembled into a number of different solvers. Simulations are defined through the construction of XML\cite{Solo_etal2002} files. Whilst the documentation contains a number of tutorials and other examples, which new users can use to learn more about the code, the XML input files are best edited using a simple text-editor, such as VI or notepad. This requirement immediately alienates those more comfortable with rich text-editors and graphical user interfaces. Furthermore significant knowledge is required to correctly install Nektar++ on all supported platforms. Finally even if correct XMLs have been generated and the software is built correctly, launching a succesful simulation requires definition of computational resources. If Nektar++ is to gain acceptance from the wider community a way of overcoming these issues is needed.
+Nektar++\cite{Nektar2015} is an open-source framework of libraries that encapsulate the spectral/hp element method. These libraries can be assembled into a number of different PDE solvers that simulate a variety of physical phenomena. Simulations are defined through the construction of XML\cite{Solo_etal2002} files. Whilst the documentation contains a number of tutorials and other examples, which new users can use to learn more about the code, the XML input files are best edited using a simple text-editor, such as VI or notepad. This requirement immediately alienates those more comfortable with rich text-editors and graphical user interfaces. Furthermore significant knowledge is required to correctly install Nektar++ on all supported platforms. Finally even if correct XMLs have been generated and the software is built correctly, launching a succesful simulation requires definition of computational resources. If Nektar++ is to gain acceptance from the wider community a way of overcoming these issues is needed.
 
 Nekkloud\cite{Cohen_etal2013} is a web-based platform, built on the libhpc framework, through which the Nektar++ solvers can be run. As shown in figure \ref{fig:venn_diagram}, Nekkloud streamlines the use of Nektar++ through opening access to multiple computational resources; separation of expertise into various sections, with the ability to generate many examples; and through providing an intuitive interface encompassing all possible functionality of the solvers but ensuring robust cases are generated.
 
@@ -190,17 +191,17 @@ The project presented within this report aims to develop the latter two of the p
 \label{chap:proj_spec}
 \textbf{Project Aims:}
 \begin{itemize}
-\item Build a robust and intuitive interface, that correctly generates input XML files for the incompressible flow solver in Nektar++.
+\item Build a web-based graphical user interface, which generates robust and sane input XML files for the incompressible flow solver in Nektar++.
 \end{itemize}
 
 The incompressible flow solver was chosen as it has the largest user base and represents a foundation upon which templates for other solvers can be derived.
 \\ \vspace{.25cm} \\
 \textbf{Project Objectives:}
 \begin{enumerate}
-\item Map and determine the entire breadth of functionality within the incompressible flow solver.
-\item Understand and detail the constraints between said functions.
-\item Develop TemPSS transform templates which correctly instantiate all functions.
-\item Represent these functions and constraints within a logical and intuitive interface.
+\item Map and determine the functionality and parameter space of the incompressible flow solver.
+\item Understand and detail the constraints between said simulation parameters.
+\item Develop TemPSS transform templates which correctly instantiate all simulation parameters.
+\item Represent these parameters and constraints within a logical and intuitive interface.
 \item Perform a beta testing of the interface with Nektar++ users and implement recommendations.
 \item Test the operation of XML generation, through benchmarking against a selection of representative testcases.
 \end{enumerate}
@@ -239,16 +240,9 @@ Profiles can also be saved and shared with other users, this is part of the wide
 \subsection{Input to Output}
 Based on the Java web service environment TemPSS uses a number of Java libraries and files to manage the user and profiles database, but also to define the overall function and look of the interface. Structure of specific template trees, such as that for the incompressible Navier-Stokes solver, are defined by XML schema. These schema are constituted, in part, by further smaller XML style sheets. The final Nektar++ compatible XML is then generated through an XSLT transform.
 
-\begin{figure}[htb!]
- \centering
- \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{TEMPSS}
- \captionof{figure}{Build Diagram for TemPSS.}
- \label{fig:TEMPSS}
-\end{figure}
-
 \subsubsection{XML Structure}
 \nomenclature{XML}{Extensible Markup Language}
-XML is the chosen text format for both the input file for Nektar++ and schema definition for the TemPSS interface tree. XML files are structured into multiply hierarchies of parent and child nodes. Figure \ref{fig:XML} shows the XML definition of part of the tree which allows a forcing function to be defined. The parent node is named \url{Force}, and it has three children: \url{Absorption}, \url{Body} and, \url{Noise}. The children may also have children, such as \url{Absorption} has \url{Coeff}, \url{RefFlow} and, \url{RefFlowTime}. This can go on \textit{ad infinitum}.
+XML is the chosen text format for both the input file for Nektar++ and schema definition for the TemPSS interface tree. XML files are structured into multiple	 hierarchies of parent and child nodes. Figure \ref{fig:XML} shows the XML definition of part of the tree which allows a forcing function to be defined. The parent node is named \texttt{Force}, and it has three children: \texttt{Absorption}, \texttt{Body} and, \texttt{Noise}. The children may also have children, such as \texttt{Absorption} has \texttt{Coeff}, \texttt{RefFlow} and, \texttt{RefFlowTime}. This can go on \textit{ad infinitum}.
 
 \begin{figure}[htb!]
  \centering
@@ -259,7 +253,7 @@ XML is the chosen text format for both the input file for Nektar++ and schema de
 
 To define the functionality of a node, for the TemPSS interface tree, keywords with additional information can be include in the node head. The options available, to both the parent and child nodes, are given by the standard XSLT library and additional custom options are defined across a number of XML style sheets. 
 
-In figure \ref{fig:XML} node \url{Force} the option keywords \url{repeatable}, \url{paramType}, and \url{optional} are used. Keywords \url{repeatable} and \url{optional} are defined in the XSL file \url{XsdToHtmlTransform.xsl}. These options give the ability to define between $0$ to $\infty$ instances of the same function. For example one may wish to have both an absorption and body force, thus the option \url{repeatable} allows the addition of instances of this function. In figure \ref{fig:force_tree} we see the manifestation of the \url{repeatable} keyword in the form of a plus sign, clicking on this adds an extra instance to the tree. Similarly the \url{optional} command is seen in figure \ref{fig:force_tree} as the slider. The slider is coloured green for force, as it has been selected, but red for the other options which are not. This switch allows options to be added in or out of the output easily.
+In figure \ref{fig:XML} node \texttt{Force} the option keywords \texttt{repeatable}, \texttt{paramType}, and \texttt{optional} are used. Keywords \texttt{repeatable} and \texttt{optional} are defined in the XSL file \texttt{XsdToHtmlTransform.xsl}. These options give the ability to define between $0$ to $\infty$ instances of the same function. For example one may wish to have both an absorption and body force, thus the option \texttt{repeatable} allows the addition of instances of this function. In figure \ref{fig:force_tree} we see the manifestation of the \texttt{repeatable} keyword in the form of a plus sign, clicking on this adds an extra instance to the tree. Similarly the \texttt{optional} command is seen in figure \ref{fig:force_tree} as the slider. The slider is coloured green for force, as it has been selected, but red for the other options which are not. This switch allows options to be added in or out of the output easily.
 
 \begin{figure}[htb!]
  \centering
@@ -268,7 +262,7 @@ In figure \ref{fig:XML} node \url{Force} the option keywords \url{repeatable}, \
  \label{fig:force_tree}
 \end{figure}
 
-The child node \url{Noise} is selected in figure \ref{fig:force_tree}. Observing that in the XML structure, figure \ref{fig:XML}, that defines this tree the child of \url{Noise} has the nodes \url{Whitenoise}, \url{UpdateFreq} and \url{Nsteps}. These have type defined as positiveDouble - a custom type. Figure \ref{fig:custom_type} shows how using the XSLT standard parameters a new type is created which only allows positive doubles to be entered as inputs into the XML.
+The child node \texttt{Noise} is selected in figure \ref{fig:force_tree}. Observing that in the XML structure, figure \ref{fig:XML}, that defines this tree the child of \texttt{Noise} has the nodes \texttt{Whitenoise}, \texttt{UpdateFreq} and \texttt{Nsteps}. These have type defined as positiveDouble - a custom type. Figure \ref{fig:custom_type} shows how using the XSLT standard parameters a new type is created which only allows positive doubles to be entered as inputs into the XML.
 
 \begin{figure}[htb!]
  \centering
@@ -279,7 +273,7 @@ The child node \url{Noise} is selected in figure \ref{fig:force_tree}. Observing
 
 \subsubsection{XSLT Transform}
 \nomenclature{XSLT}{Extensible Stylesheet Language Transformations}
-To create the final output XML, which will serve as the input for an Nektar++ simulation, XSLT transforms are utilised. Taking the information entered into the XML schema and applying a number of templates to the data an output XML is generated. Figures \ref{fig:xsl_parent}, \ref{fig:xsl_child}, and \ref{fig:xsl_final} shows a distilled version of such an XSLT transform file, with the relevant templates for the forcing function as in figure \ref{fig:XML}.
+To create the final output XML, which will serve as the input for an Nektar++ simulation, XSLT transforms are utilised. XSLT reads the relationships between nodes as a set of paths. Named XPATH information entered at any node within the TemPSS tree can be accessed and then applied to the output XML. For example in figure \ref{fig:XML} the XPATH to the value of \texttt{UpdateFreq} would be \texttt{Force/Noise/UpdateFreq}.
 
 \begin{figure}[htb!]
  \centering
@@ -288,7 +282,9 @@ To create the final output XML, which will serve as the input for an Nektar++ si
  \label{fig:xsl_parent}
 \end{figure}
 
-Figure \ref{fig:xsl_parent} define the templates for the forcing function itself. During transformation it performs a test to see which of the force types are chosen. For each force that is found the values are searched and again tested for, shown by figure \ref{fig:xsl_child}. In figure \ref{fig:xsl_final} the code then takes these templates and places them into the Nektar++ compatible XML output file. Note that this example contains only the template applications for the forcing function.
+In figure \ref{fig:xsl_final} the XPATH of the primary node is seen on line 2. The function \texttt{match} finds the paths specified, in this case \texttt{/IncompressibleNavierStokes}, and then writes the XML nodes \texttt{<NEKTAR>} to output pictured figure \ref{fig:xml_output} lines 3 and 8. In order to further instantiate the output XML another template is applied on line 4 of figure \ref{fig:xsl_final}. Here function \texttt{<xsl:apply-templates>} then scans for the path \texttt{AdditionalParametersForce}. If this path exists the template named \texttt{AddForces}, figure \ref{fig:xsl_parent}, is applied.
+
+In the template \texttt{AddForces} the same process is repeated. If the XPATH finds \texttt{Force} in the TemPSS tree the nodes \texttt{<FORCE>} are added, which manifest in the output \ref{fig:xml_output} on lines 3 and 7. As there are a number of options this template performs a number of \texttt{xsl:if} tests to check which additional templates should be utilised. Absorption has been selected in the TemPSS tree. Thus the \texttt{xsl:attribute} places the tag \texttt{TYPE="Absorption"} in the output force node, see line 3 of figure \ref{fig:xml_output}. This tells the Nektar++ solver that an absorption force is being utilised.
 
 \begin{figure}[htb!]
  \centering
@@ -297,14 +293,14 @@ Figure \ref{fig:xsl_parent} define the templates for the forcing function itself
  \label{fig:xsl_child}
 \end{figure}
 
-When transforming the XML scheme the XSLT searches for the nodes whose location is specified through XPATH. The XPATH acts like a directory path to the relevant nodes and children. This is seen in line 41, of figure \ref{fig:xsl_final}, where the top node \url{Additionalarameters} is cited. If the cited path is found then the subsequent templates are applied, so the \url{Force} template is activated and subsequently the second generation of child nodes.
-
 \begin{figure}[htb!]
  \centering
  \lstinputlisting{./data/transform_final.xml}
  \captionof{figure}{Example XSLT transform determining overall XML structure.}
  \label{fig:xsl_final}
 \end{figure}
+
+Having identified the the absorption force through the XPATH another template is called, seen in figure \ref{fig:xsl_child}. This template creates three new nodes in the output XML, lines 4, 5, and 6 in figure \ref{fig:xml_output}. Using the function \texttt{xsl:value-of} the values of the TemPSS tree nodes are then written between the output nodes.
 
 \begin{figure}[htb!]
  \centering
@@ -313,7 +309,7 @@ When transforming the XML scheme the XSLT searches for the nodes whose location 
  \label{fig:xml_output}
 \end{figure}
 
-The Java servlet finally generates the output XML through applying all the transforms to the file tree. In figure \ref{fig:xml_output} the output for the \url{Force} options is shown. The user has chosen the type to be \url{Absorption} and then additionally specified the second generation nodes of \url{Coeff}, \url{RefFlow}, and \url{RefFlowTime} as 1, 2, and 3 respectively. Here we see how both XML schema, XSL tranform and defined options are used to jigsaw-like piece the final Nektar++ compatible output XML together.
+Having detailed how the absorption force is defined in an output XML, it is obvious that using jigsaw combinations of templates an output XML is built. Though in the example a single template may have sufficed. It is good practise to distill functions to their essence as the transform templates can then more easily be reused.
 
 \section{Template Tree Design}
 The primary motivation for Nekkloud is to improve the user experience of Nektar++. Fundamentally designing the tree is easy. However in reality this becomes increasingly complex as all functionality, of the incompressible flow solver, should be encapsulated within the TemPSS template tree. Moreover each branch should have as much independence from the others as possible, nevertheless a number of key intra-branch relationships persit. Branch independence should allows users to pick and choose can what they want from other profiles, and then assemble them into a complete tree germane to their specific problem.
@@ -351,7 +347,7 @@ When writing the abstract describing simulations of flow problems for a journal 
 The problem specification branch, see figure \ref{fig:problem_spec}, allows the immediate answering of these questions. Allowing the researcher to define fundamental simulation parameters, upload the geometry, specifiy boundary conditions, and initial conditions whether from file or expression.	
 
 \subsection{Numerical Specification}
-Having now defined the problem space of the simulation, users now would need to think how and what kind of problem they are solving. Therefore in the numerical specification branch a key node is \url{SimulationType}.
+Having now defined the problem space of the simulation, users now would need to think how and what kind of problem they are solving. Therefore in the numerical specification branch a key node is \texttt{SimulationType}.
 
 Three simulation types are available:
 \begin{itemize}
@@ -477,7 +473,7 @@ In figure \ref{fig:constraints_mapping} the solver type and projection are direc
 \end{figure}
 
 \subsection{Indirect Constraints}
-Indirect or implicit constraints are somewhat more subtle than the explicitly defined constraints. Through creation of various templates, for certain common functions, the tree can be altered depending upon which kind of simulation is being performed. This occurs for the dummy parameter of \url{simulationType}. Here the option \url{Timing} does not appear if \url{SteadyStateStability} is chosen. Whereas for both other options it does. In this way options can be concentrated to show only that which is truly required to the user, simplifying the interface substantially.
+Indirect or implicit constraints are somewhat more subtle than the explicitly defined constraints. Through creation of various templates, for certain common functions, the tree can be altered depending upon which kind of simulation is being performed. This occurs for the dummy parameter of \texttt{simulationType}. Here the option \texttt{Timing} does not appear if \texttt{SteadyStateStability} is chosen. Whereas for both other options it does. In this way options can be concentrated to show only that which is truly required to the user, simplifying the interface substantially.
 
 \section{Mapping Constraints}
 Prior to understanding the constraints, between parameters within the solver, all possible parameters must be determined. Within this group only a subset have any relationships. For the incompressible Navier-Stokes solver the linked parameter types are listed below:
@@ -614,17 +610,17 @@ The steady Oseen equations were derived by Oseen\cite{Oseen1910} as a developmen
 \subsubsection{Steady Linearised Navier-Stokes}
 The linearised Navier-Stokes equations are formed through the perturbation of the flow field. Considering the flow field as a steady base flow with the addition of minute perturbations,
 \begin{equation}
-\mathbf{u} + \varepsilon \mathbf{u'}
+\mathbf{u} = \mathbf{U} + \epsilon\mathbf{u'}
 \end{equation}
 assuming that the $\varepsilon \ll 1$ the $\mathbf{u'} \cdot \mathbf{u'}$ terms can be neglected. This gives rise to the unsteady linearised Navier-Stokes equation:
 \begin{equation}
-\frac{\partial \mathbf{u'}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u'} + \mathbf{u'} \cdot \nabla \mathbf{u} = - \nabla p + \nu  \nabla^{2} \mathbf{u'} + \mathbf{f}, \qquad \nabla \cdot \mathbf{u'}
+\frac{\partial \mathbf{u'}}{\partial t} + \mathbf{U} \cdot \nabla \mathbf{u'} + \mathbf{u'} \cdot \nabla \mathbf{U} = - \nabla p + \nu  \nabla^{2} \mathbf{u'} + \mathbf{f}, \qquad \nabla\cdot\mathbf{u'} = 0
 \label{eq:UnsteadyLinearisedNS}
 \end{equation}
 Performing the same operation to the steady Navier-Stokes gives the linearised Navier-Stokes:
 
 \begin{equation}
-\mathbf{u'} \cdot \nabla \mathbf{u} = - \nabla p + \nu  \nabla^{2} \mathbf{u'} + \mathbf{f}, \qquad \nabla \cdot \mathbf{u'}
+\mathbf{u'} \cdot \nabla \mathbf{U} = - \nabla p + \nu  \nabla^{2} \mathbf{u'} + \mathbf{f}, \qquad \nabla\cdot\mathbf{u'} = 0
 \label{eq:SteadyLinearisedNS}
 \end{equation}
 
@@ -637,10 +633,7 @@ Similarly to the Oseen equations the unsteady Stokes equations seek to include a
 \end{equation}
 
 \subsubsection{Unsteady Navier-Stokes}
-The final form, and most commonly used, of the equation that the incompressible Navier-Stokes solver can operate on is the full unsteady Navier-Stokes equations.
-\begin{equation*}
-\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} = - \nabla p + \nu \nabla^{2} \mathbf{u} + \mathbf{f}, \qquad \nabla \cdot \mathbf{u} = 0
-\end{equation*}
+The final form, and most commonly used, of the equation that the incompressible Navier-Stokes solver can operate on is the full unsteady Navier-Stokes equations as in equation \ref{eq:IncNS}.
 		
 \subsubsection{Relationship with Solver Type}
 Each equation has a direct relationship with the solver that is available to use. Ergo when a solver is chosen within the TemPSS tree the equation types become restricted. These relations are listed directly in the Nektar++ user documentation and again reproduced in table \ref{tab:equation_solver_relation}. Enforcement of these relationships is performed directly through use of the XML constraint file.
@@ -784,7 +777,7 @@ Therefore an interactive visualisation has been created which both show the rela
 
 Figure \ref{fig:constrain_directionality} shows a snippet of the interactive chord diagram. Grouping similar functions together, such as driver or solver type, a user can select any parameter. Once a parameter has been selected the links between related parameters are illuminated. Green shows that a link is dependent upon the selected parameters, speak this is a downwind selection in terms of the overall workflow. Similarly blue shows that the linked node is upstream of the selected parameter and that in order to choose it the linked node may be required. In the figure \ref{fig:constrain_directionality} the user has selected quasi dimensions. The blue links show that in order to select this the user should have chosen either 2- or 3D as the dimension field. The green shows that now the user can choose from either the coupled linear Navier-Stokes solver or velocity correction scheme. Moving then to the next option a user can see which other parameters become available and slowly navigate their way through the key decisions.
 
-This tool is not only helpful in encapsulating these relationships clearly but through definition of a simple \url{.json} file new relationships can be rapidly visualised with little effort.
+This tool is not only helpful in encapsulating these relationships clearly but through definition of a simple \texttt{.json} file new relationships can be rapidly visualised with little effort.
 %----------------------------------------------------------------------------------------
 %	TESTING AND RESULTS
 %----------------------------------------------------------------------------------------
@@ -1046,9 +1039,12 @@ Part of the overall objective of this project is to separate the expertise requi
 \appendix
 \chapter{TemPSS Tree Listing}
 \label{app:tempss_function}
+\vspace*{-1cm}
+These diagrams can be found at \url{https://github.com/maxrobot/chord_diag}. Instructions are listed in \url{README.md}.
+
 \begin{figure}[htb!]
  \centering
- \includegraphics[width=.8\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{overview}
+ \includegraphics[width=.8\linewidth,  clip=true, trim = .1cm 0cm 0cm 0cm]{overview}
  \captionof{figure}{Diagrammatical Overview of Incompressible Navier-Stokes TemPSS Tree.}
  \label{fig:overview}
 \end{figure}
@@ -1062,32 +1058,31 @@ Part of the overall objective of this project is to separate the expertise requi
 
 \begin{figure}[htb!]
  \centering
- \includegraphics[width=1\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{numericalSpecification}
+ \includegraphics[width=1\linewidth,  clip=true, trim = .1cm 0cm 0cm 0cm]{numericalSpecification}
  \captionof{figure}{Numerical Specification Branch for Incompressible Navier-Stokes TemPSS Tree.}
  \label{fig:numericalSpecification}
 \end{figure}
 
 \begin{figure}[tb!]
  \centering
- \includegraphics[width=1\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{AdditionalParameters}
+ \includegraphics[width=1\linewidth,  clip=true, trim = .2cm 0cm 0cm 0cm]{AdditionalParameters}
  \captionof{figure}{Additional Parameters Branch for Incompressible Navier-Stokes TemPSS Tree.}
  \label{fig:problemSpecification}
 \end{figure}
 
 \begin{figure}[tb!]
  \centering
- \includegraphics[width=1\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{AdvancedParameters}
+ \includegraphics[width=1\linewidth,  clip=true, trim = .1cm 0cm 0cm 0cm]{AdvancedParameters}
  \captionof{figure}{Advanced Parameters Branch for Incompressible Navier-Stokes TemPSS Tree.}
  \label{fig:problemSpecification}
 \end{figure}
 
 \begin{figure}[tb!]
  \centering
- \includegraphics[width=1\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{optimisationb}
+ \includegraphics[width=1\linewidth,  clip=true, trim = .2cm 0cm 0cm 0cm]{optimisationb}
  \captionof{figure}{Optimisation Branch for Incompressible Navier-Stokes TemPSS Tree.}
  \label{fig:problemSpecification}
 \end{figure}
-
 
 \chapter{Interactive Constraint Visualiser}
 \label{app:constraints}
@@ -1101,7 +1096,7 @@ Part of the overall objective of this project is to separate the expertise requi
 
 Figure \ref{fig:constraint_mapping} shows a still image of an interactive the map of relationships between functions available in Nektar++. Using an interactive map allowed the easy visualisation, and editing, of relationships between functions with directionality of dependence. Hovering over a function, with a mouse cursor, a green line is illuminated to the functions which are dependent on the function being chosen. Similarly a blue line shows backwards which functions are required to use a certain functionality.
 
-This diagram can be found at \url{https://github.com/maxrobot/chord_diag}. Instructions are listen in \url{README.md}.
+This diagram can be found at \url{https://github.com/maxrobot/chord_diag}. Instructions are listed in \url{README.md}.
 
 \chapter{NACA65 - Drag and Lift Force Measurement Comparison}
 \label{app:drag_lift_comparison}
