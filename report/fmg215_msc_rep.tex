@@ -420,7 +420,7 @@ Three individuals were asked to use TemPSS to generate a test case of their choi
 
 \chapter{Constraints}
 \label{sec:constraints}
-The TemPSS interface must encapsulate all available functionality whilst remaining intuitive to operate. Withal, when placed within the wider context of Nekkloud, it is highly undesirable if users are able to launch simulations which do not run - especially if cloud resources have been allocated and paid for! TemPSS must therefore try to constrain users from choosing options that are either incorrect, incompatible or irresponsible. Caveat that users should still be free to try things and experiment with the options in order to optimise simulation configurations.
+The TemPSS interface must encapsulate all of Nektar++'s parameter space whilst remaining intuitive to operate. Withal, when placed within the wider context of Nekkloud, it is highly undesirable if users are able to launch simulations which do not run - especially if cloud resources have been allocated and paid for! TemPSS must therefore try to constrain users from choosing options that are either incorrect, incompatible or irresponsible.
 
 In order to map constraints between functions a the work-flow, of developing a profile from scratch, should be determined. As users navigate through this work-flow options should come in and out of scope as appropriate.
 
@@ -495,9 +495,9 @@ Prior to understanding the constraints, between parameters within the solver, al
 Using both documentation, examples, and testing the dependencies have been ascertained and constraints implemented. Furthermore to help easily understand these relationships the constraints have been mapped out visually, see appendix \ref{app:constraints}. The use of this graph is subsequently discussed in section \ref{sec:constraint_graph}.
 
 \subsection{Dimensions, Solver Type, and Field}
-When developing a novel simulation case the user will need to understand what domain they are studying, and thus select the dimensions. Having chosen whether the domain is 2D or 3D, and if any of these are quasi-dimensions, the user has implicitly determined whether the velocity field contains $u, v$ and $w$. Corollary to this, selection of solver type, either the velocity correction scheme or coupled linear Navier-Stokes solver, determines if the solution of the pressure $p$ field is required.
+When instantiating a simulation the user will need to understand what domain they are studying, and thus select the dimensions. Having chosen whether the domain is 2D or 3D, and if any of these are quasi-dimensions, the user has implicitly determined whether the velocity field contains $u, v$ and $w$. Corollary to this, selection of solver type determines if the solution of pressure $p$ field is required.
 
-Knowing the dimensions, solver type and therefore the solution fields has consequences in the definition of boundary conditions and expansion. To prevent the incorrect field values being selected, the XML schema automatically selects the correct variables in the boundary conditions and for a simple expansion. This is enforced through pre-selection of the dimension and solver type options and the constraint file.
+Knowing the dimensions, solver type and therefore the solution fields has consequences in the definition of boundary conditions and expansion. To prevent the incorrect field values being selected, the XML schema automatically selects the correct variables in the boundary conditions and for a simple expansion.
 
 \begin{figure}[!htb]
 \centering
@@ -517,9 +517,9 @@ Knowing the dimensions, solver type and therefore the solution fields has conseq
 \label{fig:implicit_constraints}
 \end{figure}
 
-Figure \ref{fig:implicit_constraints} shows how choosing a dimension and solver affects the boundary conditions. In figure \ref{fig:vcs2d} the user started by selecting a two-dimensional domain and the the velocity correction scheme as solver type. Subsequently, when they tried to choose their boundary conditions the values $u, v$ and $p$ were already selected. Similarly, figure \ref{fig:coupledlinear3d} shows the variables that are presented when using the coupled linear Navier-Stokes solver for a 3D domain.
+Figure \ref{fig:implicit_constraints} shows how the field choice restrictions manifest themselves in the template tree. In figure \ref{fig:vcs2d} the user started by selecting a two-dimensional domain and the the velocity correction scheme as solver type. Subsequently, when they tried to choose their boundary conditions the values $u, v$ and $p$ were already selected. Similarly, figure \ref{fig:coupledlinear3d} shows the variables that are presented when using the coupled linear Navier-Stokes solver for a 3D domain.
 
-Here the impact of previous decisions is shown through the restriction of choices available. Important to note however  is that the directionality of decisions is not strict but reversable. Equally the user may create a profile from scratch where they start by specifying the solver type followed by boundary conditions. This would subsequently limit the dimensions which could be selected.
+Here the impact of previous decisions is shown through the restriction of choices available. Important to note is that the directionality of decisions is reversable. Insomuch that the user may start to instantiate a profile anywhere in the tree and constraints will still be enforced identically.
 
 \subsection{Geometry and Boundary Conditions}
 In the previous section the user defined the dimensions, solver type and field. Having selected these parameters the boundary conditions should be applied.
@@ -567,8 +567,6 @@ Direct numerical simulation is most commonly used simulation type in Nektar++'s 
 
 \subsubsection{Stability Analysis}
 Hydrodynamic stability is a fundamental part of fluid dynamics. It allows the study of the development of turbulent states of motion from unstable flows. Nektar++ allows the study of  hydrodynamic stability of flows utilising a direct numerical simulation of the linearised Navier-Stokes equations using iterative methods for computing the solution of the associated eigenproblem.
-
-It is possible to perform either direct, transient, or adjoint stability analyses. Ergo both the evolution operators and driver type are limited.
 
 \subsubsection{Steady State Stability Analysis}
 \nomenclature{SFD}{Selective Frequency Damping}
@@ -766,9 +764,9 @@ For the adaptive SFD operator a number of additional parameters are required. Se
 
 \section{Constraints Graph}
 \label{sec:constraint_graph}
-Visual tools are often the most effective at simply conveying the relationship between nodes in a network. Therefore a chord diagram was created, detailing the relationship between the main options available within the incompressible flow solver. However simply connecting the dots gives too much information and does not imply any directionality to the decisions.
+Visual tools are often the most effective at simply conveying the relationship between nodes in a network. Therefore a chord diagram was created, detailing the relationship between the parameter available within the incompressible flow solver. 
 
-Therefore an interactive visualisation has been created which both show the relationship of parameter pairs, but also gives a directionality between these decisions. An example image of the chord graph, and instructions in how to access it, as show in appendix \ref{app:constraints}.
+However simply connecting the parameters gives too much information and does not imply any directionality to the decisions. Therefore an interactive visualisation has been created which show the relationship of parameter pairs, and also gives a directionality between these relations. An example image of the chord graph, and instructions in how to access it, as show in appendix \ref{app:constraints}.
 
 \begin{figure}[htb!]
  \centering
@@ -777,9 +775,11 @@ Therefore an interactive visualisation has been created which both show the rela
  \label{fig:constrain_directionality}
 \end{figure}
 
-Figure \ref{fig:constrain_directionality} shows a snippet of the interactive chord diagram. Grouping similar functions together, such as driver or solver type, a user can select any parameter. Once a parameter has been selected the links between related parameters are illuminated. Green shows that a link is dependent upon the selected parameters, speak this is a downwind selection in terms of the overall workflow. Similarly blue shows that the linked node is upstream of the selected parameter and that in order to choose it the linked node may be required. In the figure \ref{fig:constrain_directionality} the user has selected quasi dimensions. The blue links show that in order to select this the user should have chosen either 2- or 3D as the dimension field. The green shows that now the user can choose from either the coupled linear Navier-Stokes solver or velocity correction scheme. Moving then to the next option a user can see which other parameters become available and slowly navigate their way through the key decisions.
+Figure \ref{fig:constrain_directionality} shows a snippet of the interactive chord diagram. A user can select any parameter, with like parameters being grouped together. Once a parameter has been selected the links between related parameters are illuminated. Green shows that a link is dependent upon the selected parameters, speak this is a downwind selection. Whereas blue shows that the linked node is upstream of the selected parameter.
 
-This tool is not only helpful in encapsulating these relationships clearly but through definition of a simple \texttt{.json} file new relationships can be rapidly visualised with little effort.
+In the figure \ref{fig:constrain_directionality} the user has selected quasi dimensions. The blue links show that in order to select this the user should have chosen either 2D or 3D as the dimension field. The green shows that now the user can choose from either the coupled linear Navier-Stokes solver or velocity correction scheme. Moving then to the next option a user can see which other parameters become available and slowly navigate their way through the key decisions.
+
+This tool is not only helpful in encapsulating these relationships clearly, but through definition of a simple \texttt{.json} file new relationships can be rapidly visualised.
 %----------------------------------------------------------------------------------------
 %	TESTING AND RESULTS
 %----------------------------------------------------------------------------------------

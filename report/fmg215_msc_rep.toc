@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {4.1.1}Dimensions, Solver Type, and Field}{15}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Geometry and Boundary Conditions}{16}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Simulation Parameters}{17}{subsection.4.1.3}
-\contentsline {subsubsection}{Direct Numerical Simulation}{18}{section*.28}
+\contentsline {subsubsection}{Direct Numerical Simulation}{17}{section*.28}
 \contentsline {subsubsection}{Stability Analysis}{18}{section*.29}
 \contentsline {subsubsection}{Steady State Stability Analysis}{18}{section*.30}
 \contentsline {subsection}{\numberline {4.1.4}Equation Type and Simulation Parameters}{18}{subsection.4.1.4}
@@ -31,28 +31,28 @@
 \contentsline {subsubsection}{Steady Oseen}{19}{section*.32}
 \contentsline {subsubsection}{Steady Linearised Navier-Stokes}{19}{section*.33}
 \contentsline {subsubsection}{Unsteady Stokes}{19}{section*.34}
-\contentsline {subsubsection}{Unsteady Navier-Stokes}{20}{section*.35}
-\contentsline {subsubsection}{Relationship with Solver Type}{20}{section*.36}
+\contentsline {subsubsection}{Unsteady Navier-Stokes}{19}{section*.35}
+\contentsline {subsubsection}{Relationship with Solver Type}{19}{section*.36}
 \contentsline {subsubsection}{Relationship with Simulation Type}{20}{section*.38}
 \contentsline {subsection}{\numberline {4.1.5}Timing Details}{20}{subsection.4.1.5}
 \contentsline {subsection}{\numberline {4.1.6}Driver Type}{21}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Evolution Operators}{22}{subsection.4.1.7}
-\contentsline {section}{\numberline {4.2}Constraints Graph}{23}{section.4.2}
-\contentsline {chapter}{\numberline {5}Testing and Results}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}NACA Aerofoil}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}T106a Quasi-3D Turbine Blade}{27}{section.5.2}
-\contentsline {section}{\numberline {5.3}Turbulent Pipe Flow}{27}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{30}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{30}{section.6.1}
-\contentsline {section}{\numberline {6.2}Further Work and Recommendations}{30}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Development of Nekkloud/Nektar++ Eco-System}{30}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Creation of Additional Templates}{31}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Partial Profiles}{31}{subsection.6.2.3}
-\contentsline {chapter}{\numberline {A}TemPSS Tree Listing}{33}{appendix.A}
-\contentsline {chapter}{\numberline {B}Interactive Constraint Visualiser}{37}{appendix.B}
-\contentsline {chapter}{\numberline {C}NACA65 - Drag and Lift Force Measurement Comparison}{39}{appendix.C}
-\contentsline {chapter}{\numberline {D}T106a - Drag and Lift Force Measurement Comparison}{40}{appendix.D}
-\contentsline {chapter}{\numberline {E}Test TemPSS User Remarks}{41}{appendix.E}
-\contentsline {section}{\numberline {E.1}User 1}{41}{section.E.1}
-\contentsline {section}{\numberline {E.2}User 2}{41}{section.E.2}
-\contentsline {section}{\numberline {E.3}User 3}{42}{section.E.3}
+\contentsline {subsection}{\numberline {4.1.7}Evolution Operators}{21}{subsection.4.1.7}
+\contentsline {section}{\numberline {4.2}Constraints Graph}{22}{section.4.2}
+\contentsline {chapter}{\numberline {5}Testing and Results}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}NACA Aerofoil}{24}{section.5.1}
+\contentsline {section}{\numberline {5.2}T106a Quasi-3D Turbine Blade}{26}{section.5.2}
+\contentsline {section}{\numberline {5.3}Turbulent Pipe Flow}{26}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Further Work and Recommendations}{29}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Development of Nekkloud/Nektar++ Eco-System}{29}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Creation of Additional Templates}{30}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Partial Profiles}{30}{subsection.6.2.3}
+\contentsline {chapter}{\numberline {A}TemPSS Tree Listing}{32}{appendix.A}
+\contentsline {chapter}{\numberline {B}Interactive Constraint Visualiser}{36}{appendix.B}
+\contentsline {chapter}{\numberline {C}NACA65 - Drag and Lift Force Measurement Comparison}{38}{appendix.C}
+\contentsline {chapter}{\numberline {D}T106a - Drag and Lift Force Measurement Comparison}{39}{appendix.D}
+\contentsline {chapter}{\numberline {E}Test TemPSS User Remarks}{40}{appendix.E}
+\contentsline {section}{\numberline {E.1}User 1}{40}{section.E.1}
+\contentsline {section}{\numberline {E.2}User 2}{40}{section.E.2}
+\contentsline {section}{\numberline {E.3}User 3}{41}{section.E.3}
