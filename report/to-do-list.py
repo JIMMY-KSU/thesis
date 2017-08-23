@@ -37,7 +37,7 @@ Specific comments:
   
   Problem Specification: Discuss geometry loading, BC generation etc? I seemed to remember you improved an aspect of this? You should write what you did.
 
-  Fig 3.11: These look rather basic and do not show off the full scope of the parameter space they encapsulate! They are also not referenced in the text. Consider removing, and reference a full list of parameters in the Appendix?
+  # Fig 3.11: These look rather basic and do not show off the full scope of the parameter space they encapsulate! They are also not referenced in the text. Consider removing, and reference a full list of parameters in the Appendix?
   
   # Eq 4.4: We typically use \mathbf{u} for the overall flow, \mathbf{U} for the base flow and \mathbf{u'} for the perturbation, so this should probably be: \mathbf{u} = \mathbf{U} + \epsilon\mathbf{u'}
 
@@ -47,5 +47,5 @@ Specific comments:
   
   # "Unsteady Navier-Stokes"  this is the base case and repeats Eq 4.1? Maybe just add this subtitle after "4.1.4..."
   
-  Test cases: possibly the specific tables of parameters are not necessary and could be put in the appendix? The plots of forces, etc, are maybe a unnecessarily large? If you have time, it might be worth setting these to run for a longer FinalTime to show that the results are truly identical to the non-TemPSS case.
+  # Test cases: possibly the specific tables of parameters are not necessary and could be put in the appendix? The plots of forces, etc, are maybe a unnecessarily large? If you have time, it might be worth setting these to run for a longer FinalTime to show that the results are truly identical to the non-TemPSS case.
 

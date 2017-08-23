@@ -314,7 +314,7 @@ Having detailed how the absorption force is defined in an output XML, it is obvi
 \section{Template Tree Design}
 The primary motivation for Nekkloud is to improve the user experience of Nektar++. Fundamentally designing the tree is easy. However in reality this becomes increasingly complex as all functionality, of the incompressible flow solver, should be encapsulated within the TemPSS template tree. Moreover each branch should have as much independence from the others as possible, nevertheless a number of key intra-branch relationships persit. Branch independence should allows users to pick and choose can what they want from other profiles, and then assemble them into a complete tree germane to their specific problem.
 
-Considerable time has thus been spent trying to logically and intuitively separate the relevant parts. Thus the code base has been separated into five separate branches:
+Considerable time has thus been spent trying to logically and intuitively separate the relevant parts, and a full listing is available in appendix \ref{app:tree_listing}. The code base has been separated into five key branches:
 
 \begin{itemize}
 \item Problem Specification
@@ -331,9 +331,11 @@ Considerable time has thus been spent trying to logically and intuitively separa
  \label{fig:documentation}
 \end{figure}
 
-A previously remarked when designing the interface it is integral to keep related parameters within the same branch. However there are of course a number of parameters which have relationships across branches. Corollary this names of nodes should be selected judiciously. Firstly they should have a name which represents their function, however in the documentation and input for Nektar++ they are often abreviated. Names should remain indicative as to which abreviated function, a node relates to, so that the user guides are not obselete within the context of TemPSS. Indeed this conflict is aided through the addition of comments to nodes that can elucidate the function of nodes, as pictured in figure \ref{fig:documentation}.
+A previously remarked when designing the interface it is integral to keep related parameters within the same branch. However there are of course a number of parameters which have relationships across branches, these should be where possible linked through a set of constraints.
 
-Ultimately the organisation of the branches could take many forms. Thus the subsequent sections try to explain the rationale behind the combination of branches that has been chosen.
+Names of nodes should be selected judiciously. Firstly they should have a name which represents their function, however in the documentation and input for Nektar++ they are often abreviated. Names should remain indicative as to which abreviated function, a node relates to, so that the user guides are not obselete within the context of TemPSS. Indeed this conflict is aided through the addition of comments to nodes that can elucidate the function of nodes, as pictured in figure \ref{fig:documentation}.
+
+Ultimately the organisation of the branches, as listed in appendix \ref{app:tree_listing}, could take many forms. Thus the subsequent sections try to explain the rationale behind the combination of branches that has been chosen.
 
 \subsection{Problem Specification}
 When writing the abstract describing simulations of flow problems for a journal paper the authors will immediately answer four questions:
@@ -346,8 +348,9 @@ When writing the abstract describing simulations of flow problems for a journal 
 
 The problem specification branch, see figure \ref{fig:problem_spec}, allows the immediate answering of these questions. Allowing the researcher to define fundamental simulation parameters, upload the geometry, specifiy boundary conditions, and initial conditions whether from file or expression.	
 
+\newpage
 \subsection{Numerical Specification}
-Having now defined the problem space of the simulation, users now would need to think how and what kind of problem they are solving. Therefore in the numerical specification branch a key node is \texttt{SimulationType}.
+Having now defined the simulation domain, users now would need to think how and what kind of problem they are solving. Therefore in the numerical specification branch a key node is \texttt{SimulationType}.
 
 Three simulation types are available:
 \begin{itemize}
@@ -358,12 +361,12 @@ Three simulation types are available:
 
 These options are not real parameters specifiable within the code. Rather they are \textit{dummy} parameters which represent types of simulation that are possible to perform in Nektar++. Selection of a dummy parameter gives only the functions that are relevant to each kind of simulation. For example a DNS simulation gives the option to specificy the time integration method, driver type, but unlike in the stability analyses, no evolution operator. Furthermore the driver types are limited to only those which are used in DNS, standard and adaptive. Thereby shaping the options that are available to users, depending on what kind of analysis they wish to perform.
 
-Additionally in the numerical specification the user defines the solver and equation types. Though they are again constrained in these choices depending on previous decisions, as detailed in section \ref{sec:constraints}. Along with the projection and expansion details these make up the rest of the numerical specification as they are all linked to the spectral hp methods used by Nektar++.
+Additionally in the numerical specification the user defines the solver and equation types. Though they are again constrained in these choices depending on previous decisions, as detailed in section \ref{sec:constraints}.
 
 \subsection{Additional Parameters}
-Aside from the definition of the domain and selection of numerics there are a number of options which users will need or want to use. The additional parameters branch contains such options, those which may or may not be required but are sufficiently common.
+Aside from the definition of the domain and selection of numerics there are a number of options which users may require. The additional parameters branch contains such options. For example the value of kinematic viscosity is used often in Nektar++, however it isn't a parameter which one would use to describe the simulation to a colleague. Therefore it requires inclusion but not in the problem specification branch, neither does it fit in the numerical specification branch. 
 
-For example the value of kinematic viscosity is used often in Nektar++, however it isn't a parameter which one would use to describe the simulation to a colleague. Therefore it requires inclusion but not in the problem specification branch, neither does it fit in the numerical specification branch. Additionally a number of analytical tools are listed here. Both filters and functions are commonly used tools to calculate the lift and drag across a body amongst others. However they are also optional and case dependent ergo they reside in this section.
+Additionally a number of analytical tools are listed here. Both filters and functions are commonly used tools to calculate the lift and drag across a body amongst others. However they are also optional and case dependent ergo they reside in this section.
 
 \subsection{Advanced Parameters}
 Advanced parameters branch contains options which improve stability or accuracy of the results. Most simulations could be run without them but certain situations would benefit from their use. One could imagine the situation where a user is possibly getting spurious oscillations within their domain, and thus are advised to switch dealiasing on. The options in this branch in this branch have some advanced requirements, which can improve simulations however a complete novice user would and should not need to use these options.
@@ -389,7 +392,6 @@ Correctly defining the optimisation parameters can lead to improved performance,
 \label{fig:branches}
 \end{figure}
 
-\newpage
 \section{Testing of the Interface}
 In order to ensure that the user interface is intuitive a number of tests have been performed by users of Nektar++.
 
@@ -424,7 +426,7 @@ In order to map constraints between functions a the work-flow, of developing a p
 
 \begin{figure}[htb!]
  \centering
- \includegraphics[width=.5\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{decision_flow}
+ \includegraphics[width=.85\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{workflow}
  \captionof{figure}{Work Flow of Decisions Necessary to Create a Simulation.}
  \label{fig:descision_flow}
 \end{figure}
@@ -783,7 +785,7 @@ This tool is not only helpful in encapsulating these relationships clearly but t
 %----------------------------------------------------------------------------------------
 \newpage
 \chapter{Testing and Results}
-TemPSS must be relied upon to accurately and consistently create functioning input files for Nektar++. To test that TemPSS is correctly generating XMLs, a number of test cases have been developed. These cases represent between them a wide variety of functionality of the incompressible Navier-Stokes solver.
+TemPSS must be relied upon to accurately and consistently create functioning input files for Nektar++, which also prevent logical inconsistencies from being defined. To test that TemPSS is correctly generating XMLs, a number of test cases have been developed. These cases represent between them a wide variety of functionality of the incompressible Navier-Stokes solver.
 
 \begin{itemize}
 \item Flow past a NACA aerofoil
@@ -794,16 +796,7 @@ TemPSS must be relied upon to accurately and consistently create functioning inp
 Developing the input files using TemPSS the results are then compared against the original simulations to ensure they produce identical results.
 
 \section{NACA Aerofoil}
-\begin{figure}[htb!]
- \centering
- \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{naca_domain}
- \captionof{figure}{Domain of the NACA Aerofoil.}
- \label{fig:naca_domain}
-\end{figure}
-
-Simulation of the flow past a NACA aerofoil, at Reynolds number $135,000$, has been performed. This case tests a number of key functions in the incompressible Navier-Stokes solver. Moreover many of the potential Nekkloud users would wish to simulate flows past aerofoils and other aerodynamic components, thus demonstrating this capability is key to increasing number users.
-
-Domain of the simulated NACA aerofoil is shown in figure \ref{fig:naca_domain}. Table \ref{tab:naca_boundaries} lists the boundary conditions labelled in figure \ref{fig:naca_domain}. Other key simulation parameters are listed in the table \ref{tab:naca_parameters}.
+Simulation of the flow past a NACA aerofoil, at Reynolds number $135,000$, has been performed. This case tests a number of key functions in the incompressible Navier-Stokes solver. Moreover many of the potential Nekkloud users would wish to simulate flows past aerofoils and other aerodynamic components, thus demonstrating this capability is key to increasing user numbers.
 
 \begin{table}[htb!]
 	\centering
@@ -824,31 +817,44 @@ Domain of the simulated NACA aerofoil is shown in figure \ref{fig:naca_domain}. 
     \label{tab:naca_boundaries}
 \end{table}
 
-In order to ensure that the simulations are being defined correctly two simulations have been run. The first the original input file defined manually, followed by the same simulation defined utilising TemPSS. Using the aerodynamic forces filter the lift and drag acting on the body has been calculated at a number of time intervals.
+Domain of the simulated NACA aerofoil is shown in figure \ref{fig:naca_domain}, with the boundaries labelled described in table \ref{tab:naca_boundaries}. To ensure that the simulations are being defined correctly two simulations have been run. The first the original input file defined manually, followed by the same simulation generated through TemPSS. Using the aerodynamic forces filter the lift and drag acting on the body has been calculated at a number of time intervals.
+
+\begin{figure}[htb!]
+ \centering
+ \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{naca_domain}
+ \captionof{figure}{Domain of the NACA Aerofoil.}
+ \label{fig:naca_domain}
+\end{figure}
 
 Running for a total of 5000 time intervals the aerodynamic forces were measured every 1000 iterations. Results for both the original input file and that generated through TemPSS are list in table \ref{tab:aero_comparison}. Data from this table is subsequently visualised in figure \ref{fig:drag_lift_comparison} in which it can be clearly seen that both the drag forces for the original and TemPSS generated inputs are identical and thus for such cases TemPSS is working as expected.
 
 \begin{figure}[htb!]
  \centering
- \includegraphics[width=.95\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{drag}
+ \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{drag}
  \captionof{figure}{Comparison of Drag for Original and TemPSS Generated Input Files of NACA65.}
  \label{fig:drag_lift_comparison}
 \end{figure}
 
 \newpage
 \section{T106a Quasi-3D Turbine Blade}
-The case T106a simulates a turbine blade, pictured in figure \ref{fig:t106a_domain}. Simulated for a Reynolds number of $50,000$, an angle of attack of $37.7^{\circ}$, and using a Fourier expansion to simulate in the homogeneous component.
+The case T106a simulates a turbine blade, pictured in figure \ref{fig:t106a_domain}, at Reynolds number $50,000$ and an angle of attack of $37.7^{\circ}$. Unique to this simulation is that a Fourier expansion is used to simulate in the homogeneous component.
 
 \begin{figure}[htb!]
  \centering
- \includegraphics[width=.95\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{t106a_domain}
+ \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{t106a_domain}
  \captionof{figure}{Domain of the T106a Turbine Blade.}
  \label{fig:t106a_domain}
 \end{figure}
 
-Testing the functionality, of the quasi dimensions, in TemPSS is important as many people wish to use this functionality. Other key simulation parameters are listed in table \ref{tab:t106a_parameters}. As with the simulation of the NACA65 profile above, TemPSS has been verified through the comparison of the drag and lift forces.
+As with the simulation of the NACA65 profile above, TemPSS has been verified through the comparison of the drag and lift forces. Running for 20 timesteps only, and writing every 10, the drag force is shown in figure \ref{fig:drag_lift_t106a}. Additionally appendix \ref{app:drag_lift_t106a}  details the exact figures for both lift and drag from the original and TemPSS generated inputs. Again the drag and lift forces match identically so it can be infered that TemPSS is correctly generating the input XMLs.
 
-Running for 20 timesteps only, and writing every 10, the drag force is shown in figure \ref{fig:drag_lift_t106a}. Additionally appendix \ref{app:drag_lift_t106a}  details the exact figures for both lift and drag from the original and TemPSS generated inputs. Again the drag and lift forces match identically so it can be infered that TemPSS is correctly generating the input XMLs.
+\begin{figure}[htb!]
+ \centering
+ \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{drag_t106a}
+ \captionof{figure}{Comparison of Drag for Original and TemPSS Generated Input Files of T106a.}
+ \label{fig:drag_lift_t106a}
+\end{figure}
+
 \begin{table}[htb!]
 	\centering
     \begin{tabular}{ c || c }
@@ -866,15 +872,9 @@ Running for 20 timesteps only, and writing every 10, the drag force is shown in 
     \label{tab:t106a_boundaries}
 \end{table}
 
-\begin{figure}[htb!]
- \centering
- \includegraphics[width=.95\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{drag_t106a}
- \captionof{figure}{Comparison of Drag for Original and TemPSS Generated Input Files of T106a.}
- \label{fig:drag_lift_t106a}
-\end{figure}
 
 \section{Turbulent Pipe Flow}
-The final test case is that of a fully-developed turbulent pipe flow, with a periodic boundary condition. Pipe flow is one of the canonical flow cases and offers insight into many aspects of fundamental fluid mechanics, such as turbulence transition. This simulation tests the ability of TemPSS to start a classical DNS simulation with a fully turbulent restart file as the initial conditions. Key parameters are listed in table \ref{tab:pipe_parameters} and the boundaries of the domain in table \ref{tab:pipe_boundaries}.
+A fully-developed turbulent pipe flow, with a periodic boundary condition, has also been simulated. Pipe flow is one of the canonical flow cases and offers insight into many aspects of fundamental fluid mechanics, such as turbulence transition. This simulation tests the ability of TemPSS to start a classical DNS simulation with a fully turbulent restart file as the initial conditions.
 
 \begin{figure}[htb!]
  \centering
@@ -883,7 +883,7 @@ The final test case is that of a fully-developed turbulent pipe flow, with a per
  \label{fig:pipe_domain}
 \end{figure}
 
-In order to ensure that both input files are running an identical simulation the modal energy with time has been measured for each timestep. Shown in figure \ref{fig:pipe_modal} it is seen that both the original and TemPSS input have the same modal energies for the entire 500 timesteps of the simulation. The same procedure was performed for the simulation enstrophy and kinetic energies, giving an identical result.
+Checking that both input files are running an identical simulation the modal energy with time has been measured for each timestep. Shown in figure \ref{fig:pipe_modal} it is seen that both the original and TemPSS input have the same modal energies for the entire 1400+ timesteps of the simulation. The same procedure was performed for the simulation enstrophy and kinetic energies, giving an identical result.
 
 \begin{table}[htb!]
 	\centering
@@ -917,7 +917,7 @@ This report details the development and validation of a web-based graphical user
 With respect to the original goals of the project, as defined in section \ref{chap:proj_spec}, the project can be deemed a success. However there is scope for further work and a number of recommendations for which are now presented.
 
 \section{Further Work and Recommendations}
-The principal objective of Nekkloud is the expansion of the user base for Nektar++. To fulfil this goal Nekkloud simplifies the user interface of the code, reduces the expertise required by individuals to produce an actionable result, and gives a simple access to HPC. Within this there are a number of suggestions which would aid all three of these requirements:
+The principal objective of Nekkloud is the expansion of the user base for Nektar++. To fulfil this goal Nekkloud; simplifies the user interface of the code; reduces the expertise required by individuals to produce an actionable result; and gives direct access to HPC facilities. Within this there are a number of suggestions which would aid all three of these requirements:
 
 \begin{enumerate}
 \item Improve and consolidate the user eco-system within Nekkloud/Nektar++
@@ -928,18 +928,18 @@ The principal objective of Nekkloud is the expansion of the user base for Nektar
 \subsection{Development of Nekkloud/Nektar++ Eco-System}
 For users of Nektar++ outside of Imperial, or other supporting institutions, using the solvers requires following the documentation and tutorials available on the Nektar++ webpages. Whilst these resources are sophisticated and cater to a wide variety cases, there are inevitably a number of situations which require greater elucidation and/or support. In order to deal with these issues the users are given access to the core Nektar++ development team through a mailing list.
 
-The Nekkloud platform has the potential to improve the quality of the support greatly. Immediately Nekkloud gives users the ability to utilise the code without the need to install locally, as they will utilise the cloud instances of Nektar++. However the most powerful way to improve the eco-system would be the inclusion of a forum in lieu of a mailing list as:
+The Nekkloud platform has the potential to improve the quality of the support greatly. Immediately Nekkloud gives users the ability to utilise the code without the need to install locally, as they will utilise the cloud instances of Nektar++. However the most powerful way to improve the eco-system would be the inclusion of a forum in lieu of a mailing list. This is as:
 \begin{itemize}
-\item The mailing list is difficult to search to see if others have encountered the same problem. Typical forum platforms have far superior search options
-\item Mailing list uses only the expertise of the developers of Nektar++. Using a forum allows for expertise generated within the user base to be leveraged in addition to the of the developers
-\item As part of the separation of expertise rationale public profiles are available in TemPSS, users may need a description of puplic profiles and a place to discuss them
+\item The mailing list has poor search facilities, and search functions in a forum would allows users to see if the same problem has previously been covered.
+\item Queries posted to the mailing list are typically only answered by core Nektar++ developers. Using a forum allows for expertise generated within the user base to be leveraged in addition to the of the developers
+\item As part of the separation of expertise rationale public profiles are available in TemPSS. Users may need a description of puplic profiles and a place to discuss them
 \end{itemize}
 
-Creation of a user community would also distinguish Nektar++ from \textit{competitor} codes. Many widely used codes do not have an online forum, however those that do have significantly wider user bases.
+Creation of a user community would also distinguish Nektar++ from \textit{competitor} codes. Many widely used codes do not have an online forum, however those that do have significantly higher user numbers.
 
 \subsection{Creation of Additional Templates}
 Within the scope of this project the only template developed was that of the incompressible Navier-Stokes solver. Though this is the most commonly used solver, addition of the compressible flow solver is an extremely important functionality for Nekkloud.
-`
+
 Though in effect the difference between the incompressible and compresible solvers is very little, as functions such as filters, optimisation, and so on are identical. There are however a number of differences in the equations used and the field which must be solver. Adding the compressible solver, and others, would need experienced use of the XML structure as to maximise the amount of code common to both solvers.
 
 \subsection{Partial Profiles}
@@ -962,7 +962,7 @@ Part of the overall objective of this project is to separate the expertise requi
 \newpage
 \appendix
 \chapter{TemPSS Tree Listing}
-\label{app:tempss_function}
+\label{app:tree_listing}
 \vspace*{-1cm}
 These diagrams can be found at \url{https://github.com/maxrobot/chord_diag}. Instructions are listed in \url{README.md}.
 
