@@ -824,31 +824,6 @@ Domain of the simulated NACA aerofoil is shown in figure \ref{fig:naca_domain}. 
     \label{tab:naca_boundaries}
 \end{table}
 
-\begin{table}[htb!]
-	\centering
-    \begin{tabular}{ l || c c}
-    \hline
-    Parameters & Choice & Notes \\
-    \hline
-    Dimensions & 2D & n/a\\
-    Simulation Type & Stability Analysis & n/a\\
-    Solver Type & Velocity Correction Scheme & n/a\\
-    Equation Type & Unsteady Navier-Stokes & n/a\\
-    Driver Type & Standard & n/a\\
-    Time Integration Method & IMEX Order 2 & n/a\\
-    Evolution Operator & Nonlinear & n/a\\   \hline
-	 & Global System Solution & XxtMultiLevelStaticCond\\
-	& Spectral Vanishing Viscosity & n/a\\
-	Additional Options & Spectral HP Dealiasing & n/a\\
-	& Filter - Aerodynamic Forces & Operating across boundary 7\\
-	& Filter - Average Fields
-	 & n/a\\
-    \hline
-    \end{tabular}
-    \caption{Specification of parameters for the NACA Aerofoil Simulation.}
-    \label{tab:naca_parameters}
-\end{table}
-
 In order to ensure that the simulations are being defined correctly two simulations have been run. The first the original input file defined manually, followed by the same simulation defined utilising TemPSS. Using the aerodynamic forces filter the lift and drag acting on the body has been calculated at a number of time intervals.
 
 Running for a total of 5000 time intervals the aerodynamic forces were measured every 1000 iterations. Results for both the original input file and that generated through TemPSS are list in table \ref{tab:aero_comparison}. Data from this table is subsequently visualised in figure \ref{fig:drag_lift_comparison} in which it can be clearly seen that both the drag forces for the original and TemPSS generated inputs are identical and thus for such cases TemPSS is working as expected.
@@ -898,35 +873,6 @@ Running for 20 timesteps only, and writing every 10, the drag force is shown in 
  \label{fig:drag_lift_t106a}
 \end{figure}
 
-\begin{table}[htb!]
-	\centering
-    \begin{tabular}{ l || c c}
-    \hline
-    Parameters & Choice & Notes \\
-    \hline
-    Dimensions & 2.5D & n/a\\
-    Simulation Type & Direct Numerical Simulation & n/a\\
-    Solver Type & Velocity Correction Scheme & n/a\\
-    Equation Type & Unsteady Navier-Stokes & n/a\\
-    Driver Type & Standard & n/a\\
-    Time Integration Method & IMEX Order 2 & n/a\\
-    Evolution Operator & Nonlinear & n/a\\   \hline
-	 & Global System Solution & XxtMultiLevelStaticCond\\
-	& Spectral Vanishing Viscosity & n/a\\
-	& Spectral HP Dealiasing & n/a\\
-	& Filter - Aerodynamic Forces & Operating across boundary 5\\
-	Additional Options  & Filter - Average Fields & n/a\\
-	& Filter - Reynolds Stresses & n/a\\
-	& Filter - Energy & n/a\\
-	& Filter - Modal Energy & n/a\\
-	& Fourier Expansion FFTW & n/a\\
-    \hline
-    \end{tabular}
-    \caption{Specification of parameters for the T106a Turbomachine Simulation.}
-    \label{tab:t106a_parameters}
-\end{table}
-
-\newpage
 \section{Turbulent Pipe Flow}
 The final test case is that of a fully-developed turbulent pipe flow, with a periodic boundary condition. Pipe flow is one of the canonical flow cases and offers insight into many aspects of fundamental fluid mechanics, such as turbulence transition. This simulation tests the ability of TemPSS to start a classical DNS simulation with a fully turbulent restart file as the initial conditions. Key parameters are listed in table \ref{tab:pipe_parameters} and the boundaries of the domain in table \ref{tab:pipe_boundaries}.
 
@@ -954,32 +900,10 @@ In order to ensure that both input files are running an identical simulation the
     \label{tab:pipe_boundaries}
 \end{table}
 
-\begin{table}[htb!]
-	\centering
-    \begin{tabular}{ l || c c}
-    \hline
-    Parameters & Choice & Notes \\
-    \hline
-    Dimensions & 3D & n/a\\
-    Simulation Type & Direct Numerical Simulation & n/a\\
-    Solver Type & Velocity Correction Scheme & n/a\\
-    Equation Type & Unsteady Navier-Stokes & n/a\\
-    Driver Type & Standard & n/a\\
-    Time Integration Method & IMEX Order 2 & n/a\\
-    Evolution Operator & None & n/a\\   \hline
-	 & Global System Solution & IterativeStaticCond\\
-	Additional Options& Filter - Energy & n/a\\
-	& Filter - Modal Energy & n/a\\
-    \hline
-    \end{tabular}
-    \caption{Specification of parameters for Pipe Flow Simulation.}
-    \label{tab:pipe_parameters}
-\end{table}
-
 \begin{figure}[htb!]
  \centering
  \includegraphics[width=.95\linewidth,  clip=true, trim = 0cm 0cm 0cm 0cm]{pipe_modal}
- \captionof{figure}{Modal Energy }
+ \captionof{figure}{Modal Energy of Turbulent Pipe.}
  \label{fig:pipe_modal}
 \end{figure}
 
@@ -988,12 +912,12 @@ In order to ensure that both input files are running an identical simulation the
 %----------------------------------------------------------------------------------------
 \chapter{Conclusion and Further Work}
 \section{Conclusion}
-This report details the development and validation of a user interface, named TemPSS, that generates input files for the incompressible flow solver in Nektar++. In aim of this the functionality of the incompressible solver has been encapsulated, mapped, and organised for intuitive operation of the user interface. Included within this is the testing of the interface by a number of Nektar++ users. Additionally the relationships of between functions have been determined and visualised interactively, see appendix \ref{app:constraints}.
+This report details the development and validation of a web-based graphical user interface named TemPSS. TemPSS generates input files for the incompressible flow solver in Nektar++. In aim of this the the incompressible Navier-Stokes solver parameter space has been encapsulated, mapped, and organised for intuitive operation of the graphical user interface. Included within this is the testing of the interface by a number of Nektar++ users. Additionally the relationships of between functions have been determined, mapped and visualised interactively, see appendix \ref{app:constraints}.
 
-With respect to the original goals of the project, as detailed in section \ref{chap:proj_spec}, the project can be deemed a success. However there is scope for further work and a number of recommendations for which are now presented.
+With respect to the original goals of the project, as defined in section \ref{chap:proj_spec}, the project can be deemed a success. However there is scope for further work and a number of recommendations for which are now presented.
 
 \section{Further Work and Recommendations}
-The fundamental objective of Nekkloud is the expansion of the user base for Nektar++. To fulfil this goal Nekkloud improves the user interface of the code, reduces the expertise required by individuals to produce an actionable result, and gives a simple access to HPC. Within this there are a number of suggestions which would aid all three of these requirements:
+The principal objective of Nekkloud is the expansion of the user base for Nektar++. To fulfil this goal Nekkloud simplifies the user interface of the code, reduces the expertise required by individuals to produce an actionable result, and gives a simple access to HPC. Within this there are a number of suggestions which would aid all three of these requirements:
 
 \begin{enumerate}
 \item Improve and consolidate the user eco-system within Nekkloud/Nektar++

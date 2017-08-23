@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.14)  22 AUG 2017 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  23 AUG 2017 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,7 +700,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapter 1.
-<./images/venn_diagram.png, id=383, 578.16pt x 433.62pt>
+<./images/venn_diagram.png, id=377, 578.16pt x 433.62pt>
 File: ./images/venn_diagram.png Graphic file (type png)
 
 <use ./images/venn_diagram.png>
@@ -721,7 +721,7 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 
 ]
 Chapter 3.
-<./images/TemPSS_interface.png, id=420, 1154.3125pt x 655.44875pt>
+<./images/TemPSS_interface.png, id=414, 1154.3125pt x 655.44875pt>
 File: ./images/TemPSS_interface.png Graphic file (type png)
 
 <use ./images/TemPSS_interface.png>
@@ -739,7 +739,7 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 249.
  (./data/simple.xml) [5 <./images/TemPSS_interface.png>]
-<./images/force_tree.png, id=442, 534.99875pt x 359.3425pt>
+<./images/force_tree.png, id=436, 534.99875pt x 359.3425pt>
 File: ./images/force_tree.png Graphic file (type png)
 
 <use ./images/force_tree.png>
@@ -748,21 +748,21 @@ Package pdftex.def Info: ./images/force_tree.png used on input line 260.
  [6 <./images/force_tree.png>] (./data/type.xml)
 (./data/transform_parent.xml) [7] (./data/transform_child.xml)
 (./data/transform_final.xml) (./data/xml_output.xml) [8]
-<./images/documentation.png, id=540, 610.28pt x 303.1325pt>
+<./images/documentation.png, id=534, 610.28pt x 303.1325pt>
 File: ./images/documentation.png Graphic file (type png)
 
 <use ./images/documentation.png>
 Package pdftex.def Info: ./images/documentation.png used on input line 329.
 (pdftex.def)             Requested size: 362.77263pt x 180.19725pt.
  [9] [10 <./images/documentation.png>] [11]
-<./images/problem_spec.png, id=573, 415.5525pt x 212.795pt>
+<./images/problem_spec.png, id=567, 415.5525pt x 212.795pt>
 File: ./images/problem_spec.png Graphic file (type png)
 
 <use ./images/problem_spec.png>
 Package pdftex.def Info: ./images/problem_spec.png used on input line 378.
 (pdftex.def)             Requested size: 241.84842pt x 123.84328pt.
 
-<./images/numerical_spec.png, id=574, 423.5825pt x 221.82875pt>
+<./images/numerical_spec.png, id=568, 423.5825pt x 221.82875pt>
 File: ./images/numerical_spec.png Graphic file (type png)
 
 <use ./images/numerical_spec.png>
@@ -780,7 +780,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 405--406
 
 [13]
 Chapter 4.
-<./images/decision_flow.png, id=593, 3019.28pt x 2474.24374pt>
+<./images/decision_flow.png, id=587, 3019.28pt x 2474.24374pt>
 File: ./images/decision_flow.png Graphic file (type png)
 
 <use ./images/decision_flow.png>
@@ -795,14 +795,14 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
  <./images/decision_flow.png>]
 (./data/constraints_mapping.xml)
-<./images/constraint_info.png, id=607, 600.2425pt x 392.46625pt>
+<./images/constraint_info.png, id=601, 600.2425pt x 392.46625pt>
 File: ./images/constraint_info.png Graphic file (type png)
 
 <use ./images/constraint_info.png>
 Package pdftex.def Info: ./images/constraint_info.png used on input line 461.
 (pdftex.def)             Requested size: 217.6621pt x 142.31776pt.
 
-<./images/constraint_info_2.png, id=608, 596.2275pt x 356.33125pt>
+<./images/constraint_info_2.png, id=602, 596.2275pt x 356.33125pt>
 File: ./images/constraint_info_2.png Graphic file (type png)
 
 <use ./images/constraint_info_2.png>
@@ -810,35 +810,35 @@ Package pdftex.def Info: ./images/constraint_info_2.png used on input line 467.
 
 (pdftex.def)             Requested size: 235.80368pt x 140.926pt.
  [15] [16 <./images/constraint_info.png> <./images/constraint_info_2.png>]
-<./images/VCS_2D.png, id=651, 281.05pt x 251.94125pt>
+<./images/VCS_2D.png, id=645, 281.05pt x 251.94125pt>
 File: ./images/VCS_2D.png Graphic file (type png)
 
 <use ./images/VCS_2D.png>
 Package pdftex.def Info: ./images/VCS_2D.png used on input line 504.
 (pdftex.def)             Requested size: 217.6621pt x 195.11789pt.
 
-<./images/coupledLinear3D.png, id=652, 290.08376pt x 250.9375pt>
+<./images/coupledLinear3D.png, id=646, 290.08376pt x 250.9375pt>
 File: ./images/coupledLinear3D.png Graphic file (type png)
 
 <use ./images/coupledLinear3D.png>
 Package pdftex.def Info: ./images/coupledLinear3D.png used on input line 510.
 (pdftex.def)             Requested size: 217.6621pt x 188.29071pt.
 
-<./images/geometry_upload.png, id=656, 458.71375pt x 250.9375pt>
+<./images/geometry_upload.png, id=650, 458.71375pt x 250.9375pt>
 File: ./images/geometry_upload.png Graphic file (type png)
 
 <use ./images/geometry_upload.png>
 Package pdftex.def Info: ./images/geometry_upload.png used on input line 527.
 (pdftex.def)             Requested size: 266.03473pt x 145.54001pt.
  [17 <./images/VCS_2D.png> <./images/coupledLinear3D.png>] <./images/dns.png, i
-d=667, 465.74pt x 207.77625pt>
+d=661, 465.74pt x 207.77625pt>
 File: ./images/dns.png Graphic file (type png)
 
 <use ./images/dns.png>
 Package pdftex.def Info: ./images/dns.png used on input line 546.
 (pdftex.def)             Requested size: 241.84842pt x 107.89207pt.
 
-<./images/steady_stability.png, id=668, 474.77374pt x 211.79124pt>
+<./images/steady_stability.png, id=662, 474.77374pt x 211.79124pt>
 File: ./images/steady_stability.png Graphic file (type png)
 
 <use ./images/steady_stability.png>
@@ -850,14 +850,14 @@ Overfull \hbox (1.85466pt too wide) in paragraph at lines 643--654
  [][] 
  []
 
-[21] [22] <./images/evop_adaptiveSFD.png, id=726, 427.5975pt x 328.22626pt>
+[21] [22] <./images/evop_adaptiveSFD.png, id=720, 427.5975pt x 328.22626pt>
 File: ./images/evop_adaptiveSFD.png Graphic file (type png)
 
 <use ./images/evop_adaptiveSFD.png>
 Package pdftex.def Info: ./images/evop_adaptiveSFD.png used on input line 760.
 (pdftex.def)             Requested size: 266.03473pt x 204.20935pt.
  [23]
-<./images/constraint_directionality.png, id=733, 623.32875pt x 395.4775pt>
+<./images/constraint_directionality.png, id=727, 623.32875pt x 395.4775pt>
 File: ./images/constraint_directionality.png Graphic file (type png)
 
 <use ./images/constraint_directionality.png>
@@ -867,7 +867,7 @@ ine 773.
  [24 <./images/evop_adaptiveSFD.png> <./images/constraint_directionality.png>] 
 [25]
 Chapter 5.
-<./images/naca_domain.png, id=748, 1063.975pt x 521.95pt>
+<./images/naca_domain.png, id=742, 1063.975pt x 521.95pt>
 File: ./images/naca_domain.png Graphic file (type png)
 
 <use ./images/naca_domain.png>
@@ -876,41 +876,54 @@ Package pdftex.def Info: ./images/naca_domain.png used on input line 799.
  [26
 
  <./images/naca_domain.png>]
-<./images/drag.png, id=762, 578.16pt x 433.62pt>
+
+LaTeX Warning: Reference `tab:naca_parameters' on page 27 undefined on input li
+ne 806.
+
+<./images/drag.png, id=755, 578.16pt x 433.62pt>
 File: ./images/drag.png Graphic file (type png)
  <use ./images/drag.png>
-Package pdftex.def Info: ./images/drag.png used on input line 858.
+Package pdftex.def Info: ./images/drag.png used on input line 833.
 (pdftex.def)             Requested size: 459.51051pt x 344.63362pt.
 
-[27] <./images/t106a_domain.png, id=769, 803.0pt x 439.6425pt>
+[27] <./images/t106a_domain.png, id=762, 803.0pt x 439.6425pt>
 File: ./images/t106a_domain.png Graphic file (type png)
 
 <use ./images/t106a_domain.png>
-Package pdftex.def Info: ./images/t106a_domain.png used on input line 869.
+Package pdftex.def Info: ./images/t106a_domain.png used on input line 844.
 (pdftex.def)             Requested size: 459.51051pt x 251.58496pt.
 
-<./images/drag_t106a.png, id=774, 578.16pt x 433.62pt>
+
+LaTeX Warning: Reference `tab:t106a_parameters' on page 28 undefined on input l
+ine 849.
+
+<./images/drag_t106a.png, id=766, 578.16pt x 433.62pt>
 File: ./images/drag_t106a.png Graphic file (type png)
 
 <use ./images/drag_t106a.png>
-Package pdftex.def Info: ./images/drag_t106a.png used on input line 896.
+Package pdftex.def Info: ./images/drag_t106a.png used on input line 871.
 (pdftex.def)             Requested size: 459.51051pt x 344.63362pt.
- [28 <./images/drag.png>] [29 <./images/t106a_domain.png>] <./images/pipe_domai
-n_real.png, id=791, 403.106pt x 78.694pt>
+
+
+LaTeX Warning: Reference `tab:pipe_parameters' on page 28 undefined on input li
+ne 877.
+
+[28 <./images/drag.png>]
+<./images/pipe_domain_real.png, id=776, 403.106pt x 78.694pt>
 File: ./images/pipe_domain_real.png Graphic file (type png)
 
 <use ./images/pipe_domain_real.png>
-Package pdftex.def Info: ./images/pipe_domain_real.png used on input line 935.
+Package pdftex.def Info: ./images/pipe_domain_real.png used on input line 881.
 (pdftex.def)             Requested size: 459.51051pt x 89.70726pt.
 
-<./images/pipe_modal.png, id=794, 462.528pt x 346.896pt>
+<./images/pipe_modal.png, id=779, 578.16pt x 433.62pt>
 File: ./images/pipe_modal.png Graphic file (type png)
 
 <use ./images/pipe_modal.png>
-Package pdftex.def Info: ./images/pipe_modal.png used on input line 981.
-(pdftex.def)             Requested size: 459.51051pt x 344.65082pt.
- [30 <./images/drag_t106a.png> <./images/pipe_domain_real.png>] [31 <./images/p
-ipe_modal.png>]
+Package pdftex.def Info: ./images/pipe_modal.png used on input line 905.
+(pdftex.def)             Requested size: 459.51051pt x 344.63362pt.
+ [29 <./images/t106a_domain.png>] [30 <./images/drag_t106a.png> <./images/pipe_
+domain_real.png>] [31 <./images/pipe_modal.png>]
 Chapter 6.
 [32
 
@@ -918,53 +931,53 @@ Chapter 6.
 
 ]
 Appendix A.
-<./images/overview.png, id=832, 475.7775pt x 85.31876pt>
+<./images/overview.png, id=823, 475.7775pt x 85.31876pt>
 File: ./images/overview.png Graphic file (type png)
 
 <use ./images/overview.png>
-Package pdftex.def Info: ./images/overview.png used on input line 1047.
+Package pdftex.def Info: ./images/overview.png used on input line 971.
 (pdftex.def)             Requested size: 386.95894pt x 69.8121pt.
 
-<./images/problemSpecification.png, id=834, 592.2125pt x 431.6125pt>
+<./images/problemSpecification.png, id=825, 592.2125pt x 431.6125pt>
 File: ./images/problemSpecification.png Graphic file (type png)
 
 <use ./images/problemSpecification.png>
-Package pdftex.def Info: ./images/problemSpecification.png used on input line 1
-054.
+Package pdftex.def Info: ./images/problemSpecification.png used on input line 9
+78.
 (pdftex.def)             Requested size: 483.69684pt x 352.53491pt.
 
-<./images/numericalSpecification.png, id=836, 594.22pt x 884.30376pt>
+<./images/numericalSpecification.png, id=827, 594.22pt x 884.30376pt>
 File: ./images/numericalSpecification.png Graphic file (type png)
 
 <use ./images/numericalSpecification.png>
 Package pdftex.def Info: ./images/numericalSpecification.png used on input line
- 1061.
+ 985.
 (pdftex.def)             Requested size: 483.69684pt x 723.31218pt.
 
 
-LaTeX Warning: Float too large for page by 15.67635pt on input line 1064.
+LaTeX Warning: Float too large for page by 15.67635pt on input line 988.
 
-<./images/AdditionalParameters.png, id=838, 565.11125pt x 439.6425pt>
+<./images/AdditionalParameters.png, id=829, 565.11125pt x 439.6425pt>
 File: ./images/AdditionalParameters.png Graphic file (type png)
 
 <use ./images/AdditionalParameters.png>
-Package pdftex.def Info: ./images/AdditionalParameters.png used on input line 1
-068.
+Package pdftex.def Info: ./images/AdditionalParameters.png used on input line 9
+92.
 (pdftex.def)             Requested size: 483.69684pt x 380.13794pt.
 
-<./images/AdvancedParameters.png, id=840, 571.13374pt x 222.8325pt>
+<./images/AdvancedParameters.png, id=831, 571.13374pt x 222.8325pt>
 File: ./images/AdvancedParameters.png Graphic file (type png)
 
 <use ./images/AdvancedParameters.png>
-Package pdftex.def Info: ./images/AdvancedParameters.png used on input line 107
-5.
+Package pdftex.def Info: ./images/AdvancedParameters.png used on input line 999
+.
 (pdftex.def)             Requested size: 483.69684pt x 189.66353pt.
 
-<./images/optimisationb.png, id=842, 595.22375pt x 208.78pt>
+<./images/optimisationb.png, id=833, 595.22375pt x 208.78pt>
 File: ./images/optimisationb.png Graphic file (type png)
 
 <use ./images/optimisationb.png>
-Package pdftex.def Info: ./images/optimisationb.png used on input line 1082.
+Package pdftex.def Info: ./images/optimisationb.png used on input line 1006.
 (pdftex.def)             Requested size: 483.69684pt x 171.29625pt.
  [35
 
@@ -972,12 +985,12 @@ Package pdftex.def Info: ./images/optimisationb.png used on input line 1082.
 ericalSpecification.png>] [37 <./images/AdditionalParameters.png> <./images/Adv
 ancedParameters.png>] [38 <./images/optimisationb.png>]
 Appendix B.
-<./images/constraint_mapping.png, id=872, 953.5625pt x 953.5625pt>
+<./images/constraint_mapping.png, id=863, 953.5625pt x 953.5625pt>
 File: ./images/constraint_mapping.png Graphic file (type png)
 
 <use ./images/constraint_mapping.png>
-Package pdftex.def Info: ./images/constraint_mapping.png used on input line 109
-2.
+Package pdftex.def Info: ./images/constraint_mapping.png used on input line 101
+6.
 (pdftex.def)             Requested size: 435.32419pt x 435.32664pt.
  [39
 
@@ -995,24 +1008,27 @@ Appendix E.
 [43
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1197.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1121.
  [44]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1121.
  (./fmg215_msc_rep.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1197.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1197.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1121.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1121.
 
 Package rerunfilecheck Info: File `fmg215_msc_rep.out' has not changed.
 (rerunfilecheck)             Checksum: DF208A74153EC7A93B76DCF452D46B0F;3059.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1197.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1121.
  ) 
 Here is how much of TeX's memory you used:
- 11119 strings out of 494910
- 162875 string characters out of 6179836
+ 11116 strings out of 494910
+ 162827 string characters out of 6179836
  397558 words of memory out of 5000000
  13876 multiletter control sequences out of 15000+600000
  67294 words of font info for 48 fonts, out of 8000000 for 9000
@@ -1032,10 +1048,10 @@ share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public
 exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on fmg215_msc_rep.pdf (53 pages, 1626751 bytes).
+Output written on fmg215_msc_rep.pdf (53 pages, 1668203 bytes).
 PDF statistics:
- 1028 PDF objects out of 1200 (max. 8388607)
- 867 compressed objects within 9 object streams
- 302 named destinations out of 1000 (max. 500000)
+ 1018 PDF objects out of 1200 (max. 8388607)
+ 857 compressed objects within 9 object streams
+ 299 named destinations out of 1000 (max. 500000)
  635 words of extra memory for PDF output out of 10000 (max. 10000000)
 

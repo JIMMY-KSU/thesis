@@ -25,11 +25,11 @@ Specific comments:
   
   # P5 XML Structure: multiply -> multiple
   
-  Figure 3.2: Only some of these boxes ever seem to be discussed in the text? Not clear what you mean by "TemPSS file dependency" (see general comment above on figure captions!). Where does the populated profile fit in to this?
+  # Figure 3.2: Only some of these boxes ever seem to be discussed in the text? Not clear what you mean by "TemPSS file dependency" (see general comment above on figure captions!). Where does the populated profile fit in to this?
   
-  I think you need to give a more general summary of how XSLT transforms work. You have bits of XML which are written to the output file verbatim, then you have the <xsl...> tags which perform the actual processing. You have these bite-size chunks of templates which get substituted in when certain criteria are met (i.e. the name and mode).
+  # I think you need to give a more general summary of how XSLT transforms work. You have bits of XML which are written to the output file verbatim, then you have the <xsl...> tags which perform the actual processing. You have these bite-size chunks of templates which get substituted in when certain criteria are met (i.e. the name and mode).
   
-  Feel free to use inline code (formatted as monospace) to be more precise, e.g. "During transformation the <xsl:if ...> tag performs a test...", "The <xsl:apply-template> evaluates and substitutes the template which matches the given 'select' and 'mode'".
+  # Feel free to use inline code (formatted as monospace) to be more precise, e.g. "During transformation the <xsl:if ...> tag performs a test...", "The <xsl:apply-template> evaluates and substitutes the template which matches the given 'select' and 'mode'".
   
   # P8: "line 41, of figure 3.8", but lines go from 1-6.
   
