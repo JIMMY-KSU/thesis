@@ -1,0 +1,5 @@
+<xs:simpleType name="positiveDouble">
+  <xs:restriction base="xs:double">
+    <xs:minExclusive value="0"/>
+  </xs:restriction>
+</xs:simpleType>

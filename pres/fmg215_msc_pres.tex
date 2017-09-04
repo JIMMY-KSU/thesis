@@ -10,7 +10,27 @@
 \documentclass{beamer}
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{multicol}
+\usepackage{listings}
 \graphicspath{{./images/}}
+
+\lstset{language=xml,
+	tabsize=3,
+    %frame=lines,
+    %caption=Test,
+    %label=code:sample,
+    frame=shadowbox,
+    rulesepcolor=\color{gray},
+    xleftmargin=20pt,
+    framexleftmargin=15pt,
+    keywordstyle=\color{blue}\bf,
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\ttfamily,
+    emph={food,name,price},emphstyle={\color{magenta}}}
 
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Singapore}
@@ -31,73 +51,142 @@ Supervisor: Dr C. Cantwell}
 \titlepage
 \end{frame}
 
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
 \section{Introduction} 
 \begin{frame}\frametitle{Introduction}
 \textbf{Context:}
 \begin{itemize}
-\item Advancements in computing power has increased the feasibility of high-order numerical simulation to solve complex engineering problems.
-\item Availability to IaaS systems has allowed those outside large institutions to gain access to high performance computing.
+\item Advancements in computing power has increased the feasibility of using high-order numerical methods to solve complex engineering problems
+\item Availability to IaaS systems has allowed those outside large institutions to gain access to high performance computing
 \end{itemize}
+\vspace{.5cm}
 \textbf{\color{red}{Problem:}}
 \begin{itemize}
-\item Nevertheless many people still prefer to use low-order commercial software, on personal hardware.
+\item Nevertheless most people still prefer to use low-order commercial software, on personal hardware
 \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Introduction}
 \textbf{Why do people prefer commercial codes?}
+\vspace{.5cm}
 \begin{itemize}
-\item Complex and daunting interface of open-source softwares.
+\item Complex and daunting interface of open-source softwares
 \item High-level of expertise required to understand how to run properly run a simulation. (numerical methods, submitting jobs, post-processing)
-\item Lack of support for users.
+\item Inadequate user support in open-source projects
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Nekkloud and TemPSS}
+\begin{frame}\frametitle{Aims and Objectives}
+\textbf{Aim:} Build a web-based GUI that generates robust input XML files for Nektar++'s incompressible flow solver.
+\newline
+\newline
+\textbf{Objectives:}
+\small
+\begin{enumerate}
+\item Map parameter space of incompressible flow solver in Nektar++
+\item Understand and detail the constraints between parameters
+\item Develop TemPSS transform templates that instantiate all parameters
+\item Represent parameters and constraints within an intuitive interface
+\item Perform a beta testing of the interface with Nektar++ users
+\item Benchmark TemPSS using a selection of representative testcases
+\end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	NEKKL0UD AND TEMPSS
+%----------------------------------------------------------------------------------------
+\section{Nekkloud and TemPSS} 
+\begin{frame}\frametitle{Nekkloud}
 \begin{itemize}
-\item  Nekkloud is a web based platform through which the Nektar solvers can be launched.
-\item Nekkloud streamlines the running of simulations through access to IaaS systems.
-\item TemPSS provides the graphical user interface for Nekkloud, from which to instantiate input files for Nektar.
+\item  Nekkloud is a web based platform through which the Nektar++ solvers can be launched
+\item Nekkloud streamlines the running of simulations through access to IaaS systems
 \end{itemize}
 \centering
 \vspace{3pt}
 \includegraphics[width=.75\linewidth,  clip=true, trim = 0cm 0cm 0cm 2cm]{venn_diagram}
 \end{frame}
 
-
-\begin{frame}\frametitle{Aims and Objectives}
-
-\textbf{Objectives:}
-\begin{enumerate}
-\item Map functionality within the incompressible flow solver.
-\item Understand and detail the constraints between said functions.
-\item Develop TemPSS transform templates that instantiate all functions.
-\item Represent these functions and constraints within an intuitive interface.
-\item Perform a beta testing of the interface with Nektar users and implement recommendations.
-\item Test the operation of XML generation, through benchmarking against a selection of representative testcase.
-\end{enumerate}
+\begin{frame}\frametitle{\textbf{Tem}plates and \textbf{P}rofiles for \textbf{S}cientific \textbf{S}oftware - \textbf{TemPSS}}
+ 
+\begin{itemize}
+\item Integrated into Nekkloud
+\item Java based web environment hosting the user interface for Nektar++
+\item Key components:  \begin{enumerate}\vspace{.25cm} \item Templates - displays parameter space of solver \item Profiles - instatiations of templates\end{enumerate}\vspace{.25cm}
+\item Templates are defined by XML schema
+\item Profiles can be saved and shared with other users of Nekkloud/TemPSS
+\end{itemize}
+\vspace{.5cm}
+\centering\textbf{ \href{http://localhost:8080/tempss/profiles/}{\beamergotobutton{TemPSS Interface}}}
 \end{frame}
 
-\section{Methods and Theory}
-\begin{frame}\frametitle{Methods} 
-Each frame should have a title.
+%----------------------------------------------------------------------------------------
+%	DEVELOPING THE INTERFACE
+%----------------------------------------------------------------------------------------
+\section{Interface}
+\begin{frame}\frametitle{Mapping the Interface} 
+To design the user interface first all the parameter space of the incompressible solver must be determined.\\
+\vspace{.25cm}
+Additionally the parameter space must be divided into logical and intuitive sets.\\
+\begin{center}
+\href{http://localhost:8081/IncNavierCollapse.html}{\beamergotobutton{Incompressible Navier-Stokes}}
+\end{center}
+Users must also be prevented from making incorrect or injudicious choices for their Nektar++ input files.\\
+\vspace{.25cm}
+Therefore constraints between the parameter space are mapped.\\
+\begin{center}
+\href{http://localhost:8081/nek_dep.html}{\beamergotobutton{Constraints Visualiser}}
+\end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Constraints} 
-\href{http://localhost:8081/nek_dep.html}{\beamergotobutton{Interactive Constraints Visualiser}}
+\begin{frame}\frametitle{Interface Framework}
+Template trees and Nektar++ input files are both defined using XML files.\\
+\vspace{.25cm}
+Moving from the TemPSS tree to the final XML requires a number of stages.
+\begin{itemize}
+\item TemPSS tree is defined using XML schema
+\item Constraints are enforced using another XML sheet
+\item Values implemented in instantiated simulation profiles are parsed using an XSLT transform
+\item XSLT transform then generates a Nektar++ input XML
+\end{itemize} 
+\vspace{.25cm}
+\centering\textbf{ \href{http://localhost:8080/tempss/profiles/}{\beamergotobutton{TemPSS Interface}}}
 \end{frame}
 
-\begin{frame}\frametitle{TemPSS Incompressible Navier-Stokes} 
-\href{http://localhost:8081/nek_dep.html}{\beamergotobutton{Interactive Constraints Visualiser}}
+\begin{frame}\frametitle{XML Schema}
+ \centering
+ \tiny
+ \lstinputlisting{./data/simple.xml}
 \end{frame}
 
+\begin{frame}\frametitle{XSL Transform - Parent Node}
+ \centering
+ \tiny
+ \lstinputlisting{./data/transform_parent.xml}
+\end{frame}
+
+
+\begin{frame}\frametitle{XSL Transform - Child Node}
+ \centering
+ \tiny
+ \lstinputlisting{./data/transform_child.xml}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
 \section{Conclusion}
-\begin{frame}\frametitle{Conclusions} 
-Each frame should have a title.
-\end{frame}
-
-\begin{frame}\frametitle{Future Work and Recommendations} 
-Each frame should have a title.
+\begin{frame}\frametitle{Conclusions and Future Work} 
+With respect to the initial aims and objectives the project can be deemed a success.\\
+\vspace{.25cm}
+However for the project of Nekkloud there are still a number of areas which require further work, detailed below:
+ 
+\begin{enumerate}
+\item Improve and consolidate the user eco-system within Nekkloud/Nektar++
+\item Continue to add templates to TemPSS
+\item Develop the ability to load separate sections of profiles
+\end{enumerate}
 \end{frame}
 
 \end{document}

@@ -4,7 +4,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces TemPSS Interface incompressible Navier-Stokes solver template seclected.\relax }}{5}{figure.caption.8}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Example Xml Schema Defining Part of a TemPSS Tree.\relax }}{6}{figure.caption.11}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Snippet of Overall Tree Showing Definition of Forcing Function.\relax }}{6}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Snippet of Overall Tree Showing Definition of Forcing Function.\relax }}{7}{figure.caption.12}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Example Custom Node Type Limiting Input to Positive Values.\relax }}{7}{figure.caption.13}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Example XSLT Transform File Showing How XSLT Searching for Activated Nodes.\relax }}{7}{figure.caption.15}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Example XSLT transform File Showing XSLT Searching for Values of Nodes.\relax }}{8}{figure.caption.16}
@@ -16,7 +16,7 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Work Flow of Decisions Necessary to Create a Simulation.\relax }}{13}{figure.caption.21}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Example Constraint File Showing the Listing of Solver Types and Projections.\relax }}{14}{figure.caption.22}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Example Constraint File Showing the Linking of Projection Types to Solvers.\relax }}{14}{figure.caption.23}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Information Applet Available in TemPSS Showing a List of Constraints Enforced in the Parameter Space.\relax }}{15}{figure.caption.24}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Information Widget Available in TemPSS Showing a List of Constraints Enforced in the Parameter Space.\relax }}{15}{figure.caption.24}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Comparison of the Automatically Selected Fields Used in Boundary Condition Definition.\relax }}{16}{figure.caption.25}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Boundary Regions Identified In Uploaded Geometry File.\relax }}{16}{figure.caption.26}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Comparison of Dummy Parameter Selections.\relax }}{17}{figure.caption.27}

@@ -3,18 +3,18 @@
  \nomgroup{A}
 
   \item [{DNS}]\begingroup Direct Numerical Simulation\nomeqref {4.0}
-		\nompageref{16}
+		\nompageref{17}
   \item [{HPC}]\begingroup High Performance Computing\nomeqref {3.0}
 		\nompageref{4}
   \item [{IaaS}]\begingroup Infrastructure as a Service\nomeqref {1.0}
 		\nompageref{1}
   \item [{SFD}]\begingroup Selective Frequency Damping\nomeqref {4.0}
-		\nompageref{17}
+		\nompageref{18}
   \item [{TemPSS}]\begingroup Temples and Profiles for Scientific Software\nomeqref {3.0}
 		\nompageref{4}
   \item [{XML}]\begingroup Extensible Markup Language\nomeqref {3.0}
 		\nompageref{5}
   \item [{XSLT}]\begingroup Extensible Stylesheet Language Transformations\nomeqref {3.0}
-		\nompageref{6}
+		\nompageref{7}
 
 \end{thenomenclature}

@@ -1,0 +1,16 @@
+<xsl:template match="Force" mode ="AddForces">
+    <FORCE>
+      <xsl:if test="Absorption">
+        <xsl:attribute name="TYPE">Absorption</xsl:attribute>
+        <xsl:apply-templates select="Absorption" mode ="AddForces"/>
+      </xsl:if>
+      <xsl:if test="Body">
+        <xsl:attribute name="TYPE">Body</xsl:attribute>
+        <xsl:apply-templates select="Body" mode ="AddForces"/>
+      </xsl:if>
+      <xsl:if test="Noise">
+        <xsl:attribute name="TYPE">Noise</xsl:attribute>
+        <xsl:apply-templates select="Noise" mode ="AddForces"/>
+      </xsl:if>
+    </FORCE>
+</xsl:template>

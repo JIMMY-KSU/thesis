@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEKTAR>  
+  <FORCE TYPE="Absorption"> 
+    <COEFF>1.0</COEFF>  
+    <REFFLOW>2.0</REFFLOW>  
+    <REFFLOWTIME>3.0</REFFLOWTIME> 
+  </FORCE> 
+</NEKTAR>

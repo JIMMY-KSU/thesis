@@ -35,7 +35,7 @@ Specific comments:
   
   # P10: "illucidate" -> "elicudate".
   
-  Problem Specification: Discuss geometry loading, BC generation etc? I seemed to remember you improved an aspect of this? You should write what you did.
+  # Problem Specification: Discuss geometry loading, BC generation etc? I seemed to remember you improved an aspect of this? You should write what you did.
 
   # Fig 3.11: These look rather basic and do not show off the full scope of the parameter space they encapsulate! They are also not referenced in the text. Consider removing, and reference a full list of parameters in the Appendix?
   

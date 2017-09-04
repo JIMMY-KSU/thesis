@@ -1,0 +1,6 @@
+<!-- Incompressible Navier-Stokes transform -->
+<xsl:template match="/IncompressibleNavierStokes">
+  <NEKTAR>
+    <xsl:apply-templates select="AdditionalParameters/Force" mode ="AddForces"/>    
+  </NEKTAR>
+</xsl:template>
