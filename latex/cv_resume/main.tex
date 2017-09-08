@@ -1,0 +1,183 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{red}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Friedrich}{Grabner}
+\title{Resumé}                               % optional, remove / comment the line if not wanted
+\address{Apartment a22, 15 Rue Simone de Boudet}{31200 Toulouse}{France}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+44~7713~446~893}                   % optional, remove / comment the line if not wanted
+\phone[mobile]{+33~(0)6~58~37~58~07}                    % optional, remove / comment the line if not wanted
+\email{max@grabner.co.uk}                               % optional, remove / comment the line if not wanted
+\email{f.m.grabner@warwick.ac.uk}                          % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\quote{Patience is bitter, but its fruit is sweet.}                                  % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\section{Current Position}
+\cventry{10/2015--06/2016}{Researcher}{ISAE-SUPAERO}{Toulouse, France}{}
+{Working on code optimisation and parallelisation techniques for large object-orientated CFD codes at the petascale of FLOPS. This involves the use of HPC preformance analysis software, such as HPCToolkit, to identify bottlenecks within the code and find novel solutions to said issues.}  % arguments 3 to 6 can be left empty
+
+\section{University of Warwick - Mechanical Engineering MEng}
+\cventry{}{}{Third Year}{1\textsuperscript{st} class}{}{}  % arguments 3 to 6 can be left empty
+\vspace{-.5cm}
+\small{
+\cvitem{\textbf{Modules: }}{Dynamics of Vibrating Systems: Engines and Heat Pumps: Mechanical Design: Planar Structures and Mechanisms: Fluid Mechanics for Mechanical Engineers: Third Year Thesis (see below)}
+}
+\cventry{}{}{Second Year}{2:1}{}{}{}
+\vspace{-.5cm}
+\small{
+\cvitem{\textbf{Modules: }}{Design and Durability: Technological Science 2: Starting and Running a Business: Computer Systems}
+}
+\cventry{}{}{First Year}{2:1}{}{}{}
+\vspace{-.5cm}
+\small{
+\cvitem{\textbf{Modules: }}{Design for Function: Technological Science: Economics and Structure of Industry: Biomedical Engineering}
+}
+\section{Third Year thesis}
+\cvitem{Title}{\emph{DNS of jet flows: The effect of inflow conditions on the near and far fields using spectral element methods.}}
+\cvitem{Supervisor}{Dr Y.M. Chung}
+\cvitem{Description}{Using spectral element solver Nek5000 free circular jet flows were simulated for two different inlet conditions, laminar and turbulent, for Reynolds number 3600.}
+\cvitem{Result}{1\textsuperscript{st} class}
+
+\section{Experience}
+\subsection{Research}
+\cventry{Summer 2015}{Undergraduate Research Scheme}{Centre for Scientific Computing}{The University of Warwick, United Kingdom}{}{
+\begin{itemize}
+\item Continued simulations from third year thesis, investigating the effects of increased Reynolds number.
+\item Improved the mesh for simulations to make better use of resources.
+\end{itemize}}
+\cventry{Summer 2014}{Undergraduate Research Scheme}{Centre for Scientific Computing}{The University of Warwick, United Kingdom}{}{
+\begin{itemize}
+\item Used spectral element code Nek5000 to simulate pipe flows.
+\item Investigated the effects of objects in the flow stream, validated Nek5000's accuracy.
+\end{itemize}}
+\subsection{Industrial}
+\cventry{22/06/2015--01/09/2015}{Intern}{Zimmermann PV-Stahlbau}{Oberessendorf, Germany}{}{
+Overview:%
+\begin{itemize}%
+\item Was given responsibility to alter design of solar mounting system for current and future projects, using both 2D and 3D CAD.
+\item Remodelled assembly guides.
+\item Created English language versions of framework contracts, individual projects and non-disclosure agreements.
+\end{itemize}}
+\cventry{April 2014}{Intern}{ProDrive}{Banbury, United Kingdom}{}{
+Overview:
+\begin{itemize}%
+\item Worked in technical assembly, manufacturing and testing high performance automotive components.
+\item Shadowed staff during meetings organising the set-up of new production lines.
+\end{itemize}}
+\cventry{15/07/2013--30/08/2013}{Intern}{Kupplungswerk Dresden}{Dresden, Germany}{}{
+Overview:
+\begin{itemize}%
+\item Company who make power train couplings for various applications from rail, mining to agriculture.
+\item Made small CAD alterations for current projects.
+\item Created new English language operation manuals.
+\end{itemize}}
+\cventry{April 2013}{Intern}{Beach Horizon}{London, United Kingdom}{}{
+Overview:
+\begin{itemize}%
+\item Work shadowed at a hedge fund.
+\item Learnt theory behind technical trading, creation of trading algorithms and futures financial products.
+\item Wrote a small program in C to trade, which was tested on historical market data.
+\end{itemize}}
+
+\section{Secondary Education - 2004-2012}
+\subsection{King Henry VIII Comprehensive School, Abergavenny, Wales}
+\cvitemwithcomment{A Levels}{}{Maths(A), German(A), Physics(B)}
+\cvitemwithcomment{AS Levels}{}{Religious Studies(A), History(B), Music(C), French(C)}
+\cvitemwithcomment{GCSEs}{}{3x(A*), 5x(A), 1x(B), 2x(C)}
+
+\section{Languages}
+\cvitemwithcomment{English}{}{Fluent}
+\cvitemwithcomment{German}{}{Fluent}
+\cvitemwithcomment{French}{}{Intermediate}
+\cvitemwithcomment{Welsh}{}{Basic}
+
+\section{Computer skills}
+\cvdoubleitem{Engineering Software}{Autocad, Creo, MatLab, Simulink, Solidworks}{MS Office}{Word, Excel, etc...}
+\cvdoubleitem{Programming}{C, C++, Fortran, python}{Visualisation}{Paraview, VisIt, techplot, GNUPlot}
+\cvdoubleitem{CFD}{ANSYS Fluent, Starccm+, Starcd, ICEM CFD, Nek5000, nektar++, openFOAM}{Linux/UNIX/HPC}{Bash Scripting, UNIX commands, torque, HPCToolkit, libreoffice, latex}
+
+\section{References}
+Available on request.
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+%-----       letter       ---------------------------------------------------------
+% recipient data
+%\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+%\date{January 01, 1984}
+%\opening{Dear Sir or Madam,}
+%\closing{Yours faithfully,}
+%\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+%\makelettertitle
+
+%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. %Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante %elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+%Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+%Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+%Albert Einstein discovered that $e=mc^2$ in 1905.
+
+%\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+
+%\makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.

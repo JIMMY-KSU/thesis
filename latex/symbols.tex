@@ -1,0 +1,354 @@
+%as of 11/04/2013 YMC
+\newlength{\MiniPageLeft}
+\newlength{\MiniPageRight}
+\newlength{\MiniPageSmall}
+\newlength{\ThisFigureWidth}
+\setlength{\MiniPageLeft}{0.5\textwidth}
+\setlength{\MiniPageRight}{\textwidth}
+\addtolength{\MiniPageRight}{-\MiniPageLeft}
+\newlength{\WidthFull}
+\setlength{\WidthFull}{1.0\textwidth}
+\newlength{\WidthOneVeryLarge}
+\setlength{\WidthOneVeryLarge}{.90\textwidth}
+\newlength{\WidthOneLarge}
+\setlength{\WidthOneLarge}{.80\textwidth}
+\newlength{\WidthOne}
+\setlength{\WidthOne}{.70\textwidth}
+\newlength{\WidthOneSmall}
+\setlength{\WidthOneSmall}{.60\textwidth}
+\newlength{\WidthOneVerySmall}
+\setlength{\WidthOneVerySmall}{.54\textwidth}
+\newlength{\WidthTwo}
+\setlength{\WidthTwo}{.49\textwidth}
+\newlength{\WidthTwoVeryLarge}
+\setlength{\WidthTwoVeryLarge}{.58\textwidth}
+\newlength{\WidthTwoSmall}
+\setlength{\WidthTwoSmall}{.44\textwidth}
+\newlength{\WidthTwoVerySmall}
+\setlength{\WidthTwoVerySmall}{.4\textwidth}
+\newlength{\WidthThreeLarge}
+\setlength{\WidthThreeLarge}{.35\textwidth}
+\newlength{\WidthThree}
+\setlength{\WidthThree}{.32\textwidth}
+\newlength{\WidthThreeSmall}
+\setlength{\WidthThreeSmall}{.30\textwidth}
+\newlength{\WidthThreeVerySmall}
+\setlength{\WidthThreeVerySmall}{.25\textwidth}
+\newlength{\WidthFour}
+\setlength{\WidthFour}{.24\textwidth}
+\newlength{\WidthFourSmall}
+\setlength{\WidthFourSmall}{.23\textwidth}
+\newlength{\WidthFive}
+\setlength{\WidthFive}{.19\textwidth}
+\newlength{\WidthSix}
+\setlength{\WidthSix}{.15\textwidth}
+\newlength{\WidthTest}
+\setlength{\WidthTest}{1.2\WidthFour}
+\newlength{\WidthSpaceTwo}
+\setlength{\WidthSpaceTwo}{.47\textwidth}
+\newlength{\WidthSpaceThree}
+\setlength{\WidthSpaceThree}{.28\textwidth}
+\newlength{\WidthSpaceFour}
+\setlength{\WidthSpaceFour}{.22\textwidth}
+
+\newcommand{\ITE}{\begin{itemize}}
+\newcommand{\ITED}{\end{itemize}}
+\newcommand{\ENU}{\begin{enumerate}}
+\newcommand{\ENUD}{\end{enumerate}}
+%\newcommand{\etal}{\mbox{\textit{et al.}}}
+\newcommand{\etal}{{\it et al\/}.\ }
+\newcommand{\etall}{{\it et al\/}.,\ }
+\newcommand{\eg}{{\it e.g.}, }
+\newcommand{\ie}{{\it i.e.}, }
+%\newcommand{\Ans}{$-$ }
+\newcommand{\Ans}{$\checkmark$ }
+\newcommand{\Q}{\textbf{Q}}
+\newcommand{\Com}{$\bullet$ }
+\newcommand{\redbullet}{\textcolor[rgb]{1.00,0.00,0.00}{$\bullet$}~}
+%\newcommand{\Com}{$\bullet$ \textsf{Comment: }}
+%
+%Slides
+\newcommand{\BegS}{\begin{frame}}
+\newcommand{\EndS}{\end{frame}}
+\newcommand{\BegB}[1]{\begin{block}{#1}}
+\newcommand{\EndB}{\end{block}}
+\newcommand{\ppause}{\pause}
+%
+%Maths symbols
+\newcommand{\Ac}{{A}}
+\newcommand{\AR}{\mathrm{A_R}}
+%\newcommand{\CD}{{C_D}}
+\newcommand{\CL}{{C'_L}}
+\newcommand{\Cf}{C_f}
+\newcommand{\Cfo}{C_{f,0}}
+\newcommand{\Ca}{{a_\phi}}
+\newcommand{\cp}{c_p}
+\newcommand{\Cp}{C_p}
+\newcommand{\CRe}{C_M}
+\newcommand{\Cs}{C_s}
+\newcommand{\degree}{$^\circ$}
+\newcommand{\degreee}{{$^\circ$} }
+\newcommand{\degreeC}{{$^\circ$C}}
+\newcommand{\degreC}{^\circ\mathrm{C}}
+\newcommand{\DHy}{D_h}
+\newcommand{\dpdx}{\frac{dp}{dx}}
+\newcommand{\dpdxs}{\left(\frac{dp}{dx}\right)^*}
+\newcommand{\dpdxss}{\left(\frac{dp}{dx}\right)^{**}}
+\newcommand{\deltap}{\delta^+}
+\newcommand{\Deltap}{\Delta^+}
+\newcommand{\Deltatp}{\Delta t^+}
+\newcommand{\Deltaxp}{\Delta x^+}
+\newcommand{\Deltayp}{\Delta y^+}
+\newcommand{\Deltaypmax}{\Delta y^+_{max}}
+\newcommand{\Deltaypmin}{\Delta y^+_{min}}
+\newcommand{\Deltazp}{\Delta z^+}
+\newcommand{\DI}{\mbox{DI}}
+%\newcommand{\DR}{\mbox{DR}}
+%\newcommand{\DR}{$\mathcal{DR}$}
+\newcommand{\DR}{\mathcal{DR}}
+\newcommand{\DDR}{\Delta \mathcal{DR}}
+\newcommand{\DRmax}{\mathcal{DR}_{max}}
+\newcommand{\fx}{f_x}
+\newcommand{\fy}{f_y}
+\newcommand{\fz}{f_z}
+\newcommand{\Ip}{I^+}
+\newcommand{\lambdap}{\lambda^+}
+\newcommand{\lambdat}{\lambda_2}
+\newcommand{\lambdatp}{\lambda_2^+}
+\newcommand{\lambdatpz}{\lambda_{2,0}^+}
+\newcommand{\lambdax}{\lambda_x}
+\newcommand{\lambdaxp}{\lambda_x^+}
+\newcommand{\lambdaz}{\lambda_z}
+\newcommand{\lambdazp}{\lambda_z^+}
+\newcommand{\kappap}{\kappa^+}
+\newcommand{\kappax}{\kappa_x}
+\newcommand{\kappaxp}{\kappa_x^+}
+\newcommand{\kappaxpop}{\kappa_{x,opt}^+}
+%\newcommand{\kappax}{\kappa_x}
+%\newcommand{\kappaxp}{\kappa_x^+}
+%\newcommand{\kappaxpop}{\kappa_{x,opt}^+}
+\newcommand{\kappaz}{\kappa_z}
+\newcommand{\kappazp}{\kappa_z^+}
+\newcommand{\kgs}{kg/s}
+\newcommand{\kx}{k_x}
+\newcommand{\kz}{k_z}
+\newcommand{\mdot}{\dot{m}}
+\newcommand{\nus}{\nu_{sgs}}
+\newcommand{\nut}{\nu_t}
+\newcommand{\omegairmsp}{\omega_{i,rms}^+}
+\newcommand{\omegap}{\omega^+}
+\newcommand{\omegapop}{\omega_{opt}^+}
+\newcommand{\omegapopa}{\omega_{opt,200}^+}
+\newcommand{\omegax}{\omega_x}
+\newcommand{\Omegax}{\Omega_x}
+\newcommand{\omegaxplus}{\left<\omega_x|_+\right>}
+\newcommand{\omegaxminus}{\left<\omega_x|_-\right>}
+\newcommand{\omegaxpplus}{\omega'_x|_+}
+\newcommand{\omegaxpminus}{\omega'_x|_-}
+\newcommand{\omegay}{\omega_y}
+\newcommand{\Omegay}{\Omega_y}
+\newcommand{\omegaz}{\omega_z}
+\newcommand{\Omegaz}{\Omega_z}
+\newcommand{\omegazero}{\omega_0}
+\newcommand{\omegapzero}{\omega^+_0}
+\newcommand{\Rc}{r_c}
+\newcommand{\ReD}{Re_D}
+\newcommand{\ReDo}{Re_{D0}}
+\newcommand{\ReDn}{Re_{D1}}
+\newcommand{\Reh}{Re_h}
+\renewcommand{\Reh}{Re}
+\newcommand{\ReH}{Re_H}
+\newcommand{\Rem}{{Re_m}}
+\newcommand{\Remo}{Re_{m 0}}
+\newcommand{\Retau}{Re_\tau}
+\newcommand{\Retauo}{Re_{\tau 0}}
+\newcommand{\Retauu}{{Re_\tau}}
+\newcommand{\RetauD}{{Re_\tau^2}}
+\newcommand{\Retheta}{{Re_\theta}}
+\newcommand{\rms}{{rms}}
+\newcommand{\Sij}{S_{ij}}
+\newcommand{\tauij}{\tau_{ij}}
+\newcommand{\tauw}{\tau_w}
+\newcommand{\tauwo}{\tau_{w_0}}
+\newcommand{\tauwno}{\tau_{w_{no}}}
+\newcommand{\textinblue}{\textcolor{blue}}
+\newcommand{\textingreen}{\textcolor{green}}
+\newcommand{\textinred}{\textcolor{red}}
+\newcommand{\td}{\xi^*}
+%\newcommand{\tNon}{\xi}
+\newcommand{\tNon}{t}
+\newcommand{\testNon}{{$\xi$}}
+%\newcommand{\tNon}{t\Umo/R}
+\newcommand{\tp}{t^+}
+\newcommand{\tRef}{R/\Umo}
+\newcommand{\Tavg}{T_{avg}}
+\newcommand{\Tmax}{T_{max}}
+\newcommand{\Tmin}{T_{min}}
+\newcommand{\Trms}{T_{rms}}
+\newcommand{\Tb}{\widetilde{T}_m}
+\newcommand{\Te}{T_e}
+\newcommand{\Tf}{T_f}
+\newcommand{\Tm}{T_m}
+\newcommand{\Tp}{T^+}
+\newcommand{\Tw}{T_w}
+\newcommand{\Uc}{U_c}
+\newcommand{\Ucp}{U_c^+}
+\newcommand{\Uinfty}{{U_\infty}}
+\newcommand{\Uinftysq}{{U_\infty^2}}
+\newcommand{\Um}{U_m}
+\newcommand{\Umo}{U_{m0}}
+\newcommand{\Ump}{U_m^+}
+\newcommand{\Up}{U^+}
+\newcommand{\DUp}{\Delta \Up}
+\newcommand{\dUmdt}{{d\Um}/{dt}}
+\newcommand{\umax}{u'_{max}}
+\newcommand{\up}{u^+}
+\newcommand{\urms}{u_{rms}}
+\newcommand{\urmsp}{u_{rms}^+}
+\newcommand{\ui}{u_i}
+\newcommand{\uj}{u_j}
+\newcommand{\uk}{u_k}
+\newcommand{\uirms}{u_{i,rms}}
+\newcommand{\uirmsp}{u_{i,rms}^+}
+%\newcommand{\urms}{u'}
+%\newcommand{\urmsp}{u'^+}
+%\newcommand{\uirms}{u'_i}
+%\newcommand{\uirmsp}{u'^+_i}
+\newcommand{\utau}{u_\tau}
+\newcommand{\vtau}{u_\tau}
+%\newcommand{\utauD}{{u_\tau^2}}
+\newcommand{\utausq}{{u_\tau^2}}
+\newcommand{\utauno}{u_{\tau_{no}}}
+\newcommand{\utauo}{u_{\tau_0}}
+\newcommand{\utauosq}{u_{\tau_0}^2}
+\newcommand{\uu}{\overline{uu}}
+\newcommand{\uv}{-\overline{uv}}
+\newcommand{\Vcp}{V_c^+}
+\newcommand{\Vcpsq}{V_c^{+2}}
+\newcommand{\vf}{\overline{v^2}-f}
+%\newcommand{\uv}{\overline{u'v'}}
+\newcommand{\vmax}{v'_{max}}
+\newcommand{\lref}{L_{ref}}
+\newcommand{\uref}{U_{ref}}
+\newcommand{\vor}{\omega}
+\newcommand{\vorp}{\omega^+}
+\newcommand{\vpmax}{v'^+_{max}}
+%\newcommand{\vrms}{v'}
+\newcommand{\vi}{v_i}
+\newcommand{\vj}{v_j}
+\newcommand{\vk}{v_k}
+\newcommand{\vrms}{v_{rms}}
+\newcommand{\vrmsp}{v'^+}
+\newcommand{\vv}{\overline{vv}}
+\newcommand{\vwall}{v'_w}
+\newcommand{\vwallp}{v'^+_w}
+\newcommand{\wirms}{\omega_{i,rms}}
+\newcommand{\Wm}{W_m}
+\newcommand{\Wmp}{W_m^+}
+\newcommand{\wmax}{w'_{max}}
+%\newcommand{\wrms}{w'}
+\newcommand{\wi}{w_i}
+\newcommand{\wj}{w_j}
+\newcommand{\wk}{w_k}
+\newcommand{\wrms}{w_{rms}}
+\newcommand{\wrmsp}{w'^+}
+\newcommand{\ww}{\overline{ww}}
+\newcommand{\w}{\omega'}
+\newcommand{\wx}{\omega'_x}
+\newcommand{\wxz}{\omega'_{x,0}}
+\newcommand{\wxmax}{\omega'_{x, max}}
+\newcommand{\wxmin}{\omega'_{x, min}}
+\newcommand{\wxwall}{\omega'_{x, wall}}
+\newcommand{\wxp}{\omega'^+_x}
+\newcommand{\wxpz}{\omega'^+_{x,0}}
+\newcommand{\wy}{\omega'_y}
+\newcommand{\wymax}{\omega'_{y, max}}
+\newcommand{\wypmax}{\omega'^+_{y, max}}
+\newcommand{\wyp}{\omega'^+_y}
+\newcommand{\wz}{\omega'_z}
+\newcommand{\wzwall}{\omega'_{z, wall}}
+\newcommand{\xp}{x^+}
+\newcommand{\yd}{y_d}
+\newcommand{\ydo}{y_d^o}
+\newcommand{\ydop}{y_{d,op}}
+\newcommand{\ydp}{y_d^+}
+\newcommand{\ydpl}{\tilde{y}_d^+}
+\newcommand{\ydpo}{{y_d^+}_0}
+\newcommand{\ydpop}{y_{d,op}^+}
+\newcommand{\ydpno}{{y_d^+}_{no}}
+\newcommand{\yh}{y/h}
+\newcommand{\yp}{y^+}
+\newcommand{\ypmax}{y_{max}^+}
+\newcommand{\ypmin}{y_{min}^+}
+\newcommand{\ypA}{y^+_A}
+\newcommand{\ypo}{y^+_0}
+\newcommand{\yv}{y_v}
+\newcommand{\zp}{z^+}
+%
+\newcommand{\kxp}{k_x^+}
+\newcommand{\kzp}{k_z^+}
+\newcommand{\IT}{{IT}}
+\newcommand{\PS}{{PS}}
+%Battery
+\newcommand{\Li}{{{Li-ion}}}
+\newcommand{\DOD}{\mathrm{DOD}}
+\newcommand{\dUdT}{\frac{dU}{dT}}
+\newcommand{\Ea}{E_{act}}
+\newcommand{\kph}{km/h}
+\newcommand{\SOC}{\mathrm{SOC}}
+\newcommand{\Ti}{T_i}
+\newcommand{\Tref}{T_{ref}}
+\newcommand{\Umax}{U_{max}}
+\newcommand{\Umin}{U_{min}}
+\newcommand{\Uoc}{{\bf{U}_{oc}}}
+\newcommand{\Vcell}{V_{cell}}
+\newcommand{\vcell}{v_{cell}}
+\newcommand{\vectoru}{\overrightarrow{u}}
+\newcommand{\vectoromega}{\overrightarrow{\omega}}
+\newcommand{\cbc}{cbc}
+\newcommand{\Hij}{H_{ij}}
+\newcommand{\Lii}{L_{ii}}
+\newcommand{\Lij}{L_{ij}}
+\newcommand{\Mii}{M_{ii}}
+\newcommand{\Mij}{M_{ij}}
+\newcommand{\Nii}{N_{ii}}
+\newcommand{\Nij}{N_{ij}}
+\newcommand{\mbc}{\mathbf{mbc}}
+\newcommand{\nD}{{n/D}}
+\newcommand{\nh}{{n+1/2}}
+\newcommand{\nmh}{{n-1/2}}
+\newcommand{\np}{{n+1}}
+\newcommand{\uip}{{u}_i^{n+1}}
+\newcommand{\uio}{{u}_i^n}
+\newcommand{\uihat}{\widehat{{u}_i}}
+\newcommand{\uno}{{u^n}}
+\newcommand{\unp}{{u^{n+1}}}
+\newcommand{\ustar}{{u}^{*}}
+\newcommand{\udstar}{{u}^{**}}
+%\newcommand{\stfirst}{stage I}
+\newcommand{\stfirst}{IT stage}
+%\newcommand{\stsecond}{stage II}
+\newcommand{\stsecond}{WT stage}
+%\newcommand{\stthird}{stage III}
+\newcommand{\stthird}{ST stage}
+%\newcommand{\stfourth}{stage IV}
+\newcommand{\stfourth}{PS stage}
+\newcommand{\tikzcirc}{\protect\tikz \protect\draw[black] (1ex,1ex) circle (1ex) ; }
+\newcommand{\tikzsquare}{\protect\tikz \protect\draw [black] (0.1ex,0.1ex) rectangle (2ex,2ex) ; }
+
+\newcommand{\CA}{\mathbb{C}_A}
+\newcommand{\KPe}{K_{Pe}}
+\newcommand{\Paw}{P_{aw}}
+\newcommand{\Pb}{P_b}
+\newcommand{\Pe}{P_e}
+\newcommand{\Pl}{P_l}
+\newcommand{\Ppl}{P_{pl}}
+\newcommand{\Raw}{R_{aw}}
+\newcommand{\RP}{R_P}
+\newcommand{\VA}{V_A}
+\newcommand{\ZPe}{Z_{Pe}}
+
+\newcommand{\JHF}{^{F\&P}}
+\newcommand{\FP}{^{FP}}
+\newcommand{\NEXT}{\hfill \checkmark}
+\newcommand{\END}{\hfill END}
