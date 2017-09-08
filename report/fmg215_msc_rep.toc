@@ -17,8 +17,8 @@
 \contentsline {section}{\numberline {3.3}Testing of the Interface}{12}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Recommendations and Actions}{12}{subsection.3.3.1}
 \contentsline {chapter}{\numberline {4}Constraints}{13}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}Direct Constraints}{13}{subsection.4.0.1}
-\contentsline {subsection}{\numberline {4.0.2}Indirect Constraints}{14}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {4.0.2}Direct Constraints}{13}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {4.0.3}Indirect Constraints}{14}{subsection.4.0.3}
 \contentsline {section}{\numberline {4.1}Mapping Constraints}{15}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Dimensions, Solver Type, and Field}{15}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Geometry and Boundary Conditions}{16}{subsection.4.1.2}
